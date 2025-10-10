@@ -1,0 +1,447 @@
+Network,Street,City,State,Zip Code,Ports,Max Power (kW),Min Power (kW),QSR Name,Walking Distance (meter)
+Electrify America,1406 Canyon Road,Ellensburg,WA,98926,4,350,50,Burger King,19
+Charge Point,102 Maine Turnpike,West Gardiner,ME,4345,4,200,62,Burger King,17
+Charge Point,2478 N Columbia St,Milledgeville,GA,31061,2,125,125,Burger King,37
+EV Connect,3 E Knute Rockne Plaza,Rolling Prairie,IN,46371,4,50,50,Burger King,11
+EV Connect,8700 Vallance Rd,Le Roy,NY,14482,2,100,100,Burger King,50
+Charge Point,MA-24,Bridgewater,MA,2324,1,125,125,Burger King,3
+EV Connect,18208 Ave 24,Chowchilla,CA,93610,8,50,50,Burger King,5
+Tesla,8075 S Access Rd W,Clyde,TX,79510,20,250,250,Burger King,1
+EVgo,100 Renaissance Ctr,Detroit,MI,48243,4,350,350,Burger King,34
+Tesla,6603  Betty Drive,Visalia,CA,93291,19,250,250,Burger King,45
+Tesla,11235 South Fortuna Road,Yuma,AZ,85367,16,250,250,Burger King,33
+Tesla,1698 Main St,Chipley,FL,32428,8,250,250,Burger King,25
+Tesla,150 Goodman Rd W,Southaven,MS,38671,8,250,250,Burger King,49
+EV Connect,2843 IN-64,Princeton,IN,47670,2,180,180,Burger King,16
+Applegreen,I-90 Westbound,Little Falls,NY,13365,4,350,100,Burger King,45
+Tesla,5240 S Fort Apache Rd,Las Vegas,NV,89148,8,250,250,Burger King,41
+Tesla,4154 E Highland Ave,Highland,CA,92346,8,325,325,Burger King,22
+Tesla,2817  South El Camino Real,San Mateo,CA,94403,12,250,250,Burger King,33
+ZEF,2200 10th Street East,Glencoe,MN,55336,2,150,150,Burger King,38
+Tesla,3235 W Little League Dr,San Bernardino,CA,92407,12,250,250,Burger King,37
+Charge Point,1127 E 280 Byp,Phenix City,AL,36867,2,80,80,Burger King,31
+Shell,2029 S Saginaw Rd,Midland,MI,48640,8,180,100,Burger King,47
+Applegreen,Garden State Pkwy,Bloomfield,NJ,7003,2,350,75,Burger King,47
+EV Connect,1300 E Roseville Pkwy,Roseville,CA,95661,8,200,200,Burger King,4
+Tesla,US-160,Kayenta,AZ,86033,8,250,250,Burger King,46
+EVgo,7916 Norwalk Blvd,Whittier,CA,90606,4,350,100,Burger King,15
+Tesla,515 E Main St,Uvalde,TX,78801,8,250,250,Burger King,44
+Tesla,123 S Sunset Strip St,Kenedy,TX,78119,12,250,250,Burger King,10
+Blink,"11402 Northwest 41st Street, Suite 201",Doral,FL,33178,2,60,60,Burger King,42
+IONNA,1005 NE Coronado Dr,Blue Springs,MO,64014,10,400,400,Burger King,14
+Rivian,580 Canal Street,Brattleboro,VT,5301,6,300,300,Burger King,44
+Charge Point,881 Moody Street,Waltham,MA,2453,2,125,125,Burger King,31
+EV Connect,185 Main Street,Stoneham,MA,2180,6,180,180,Burger King,10
+Tesla,1479 Dempsey Rd,Milpitas,CA,95035,11,325,325,Burger King,47
+Charge Point,1400 Columbus Parkway,Opelika,AL,36804,4,80,80,Burger King,46
+Charge Point,2910 20th Ave,Valley,AL,36854,2,80,80,Burger King,3
+Charge Point,2910 20th Ave,Valley,AL,36854,2,160,160,Burger King,3
+FPL,6895 N 9 Ave,Pensacola,FL,32504,4,120,50,Burger King,27
+Applegreen,I-90 Eastbound,Corfu,NY,14036,8,350,100,Burger King,45
+EV Connect,9003 Bergenline Ave,North Bergen,NJ,7047,4,60,60,Burger King,50
+Tesla,2755 Mountain City Highway,Elko,NV,89801,6,150,150,Chipotle,47
+Electrify America,555 Shops Blvd.,MissIONNA Viejo,CA,92691,4,350,350,Chipotle,49
+Electrify America,4258 Ocean Avenue,San Francisco,CA,94132,3,350,350,Chipotle,36
+Shell,8501 West Bowles Avenue,Littleton,CO,80123,1,50,50,Chipotle,15
+Electrify America,8000 Tysons Corner Center,McLean,VA,22102,4,350,350,Chipotle,20
+Tesla,563 Grand Avenue,San Marcos,CA,92069,20,250,250,Chipotle,47
+Electrify America,694 Motor Pkwy,Hauppauge,NY,11788,4,150,50,Chipotle,36
+Shell,3251 20Th Ave,San Francisco,CA,94132,1,50,50,Chipotle,23
+Electrify America,656 Commack Rd,Commack,NY,11725,4,350,50,Chipotle,37
+EVgo,555 The Shops At MissIONNA Viejo,MissIONNA Viejo,CA,92691,2,50,50,Chipotle,46
+EVgo,195 W Esplanade Dr,Oxnard,CA,93036,1,50,50,Chipotle,11
+EVgo,1036 Broxton Ave,Los Angeles,CA,90024,2,50,50,Chipotle,5
+EVgo,8201 S Interstate 35 E,Corinth,TX,76210,4,350,100,Chipotle,22
+EVgo,5601 Red Bug Lake Rd,Winter Springs,FL,32708,4,350,100,Chipotle,41
+Electrify America,737 UNIVERSITY AVE,San Diego,CA,92103,4,350,350,Chipotle,25
+Tesla,1149 DivisIONNA St,Warwick,RI,2818,8,250,250,Chipotle,9
+EVgo,8400 Balboa Blvd,Northridge,CA,91325,4,350,100,Chipotle,29
+EVgo,5801 Beach Blvd,Jacksonville,FL,32207,4,350,350,Chipotle,0
+EV Connect,703 England St,Ashland,VA,23005,4,360,100,Chipotle,1
+Tesla,9185 De Soto Ave,Chatsworth,CA,91311,8,250,250,Chipotle,50
+Charge Point,128 Vintage Way,Novato,CA,94945,1,62,62,Chipotle,38
+Tesla,1135 GA-85,Fayetteville,GA,30214,12,325,325,Chipotle,25
+Charge Point,9000 Magellan Dr,Tehachapi,CA,93561,2,62,62,Denny's,20
+Charge Point,3980 US-17,Richmond Hill,GA,31324,2,125,125,Denny's,48
+Tesla,10390 Bennett Road,Fredonia,NY,14063,12,250,250,Denny's,30
+Tesla,333 S Abbott Ave,Milpitas,CA,95035,12,250,250,Denny's,50
+Tesla,1086 US-59,Carthage,TX,75633,8,250,250,Denny's,27
+Tesla,I-5 CA-46,Lost Hills,CA,93249,20,250,250,Denny's,34
+EVgo,9601 I-40 E Exit 76,Amarillo,TX,79118,4,350,350,Denny's,45
+EVgo,2400 So 4th Route,Sayre,OK,73662,4,350,350,Denny's,38
+EVgo,2226 North Main Street,Hubbard,OH,44425,4,350,350,Denny's,45
+EVgo,1530 Rest Church Rd,Winchester,VA,22624,4,350,350,Denny's,5
+EVgo,4380 Nashville Road,Franklin,KY,42134,4,350,350,Denny's,43
+EVgo,I-20 Exit 277 101 N FM 707,Tye,TX,79563,4,350,350,Denny's,16
+EVgo,7112 I-10 West,Orange,TX,77630,4,350,350,Denny's,12
+EVgo,844 East 1250 South,Haubstadt,IN,47639,4,350,350,Denny's,2
+Charge Point,1 River Street,Cortland,NY,13045,4,200,200,Denny's,3
+EVgo,5609 Nittany Valley Drive,Mill Hall,PA,17751,4,350,350,Denny's,49
+Tesla,13584 Camino Canada,El Cajon,CA,92021,12,325,325,Denny's,11
+EVgo,9911 Avalon Road Nw,Albuquerque,NM,87105,4,350,350,Denny's,26
+FCN,415 Clayton Rd,Raton,NM,87740,2,400,400,Denny's,44
+EVgo,950 State Road 206 West,St. Augustine,FL,32086,4,350,350,Denny's,36
+Tesla,100 Cambridgeside Place,Cambridge,MA,2141,8,72,72,Dunkin',0
+Tesla,160 Kukas Lane,Waterbury,CT,6705,8,150,150,Dunkin',46
+Tesla,903 East Main Street,Meriden,CT,6450,8,250,250,Dunkin',41
+Tesla,4968 NY-23,Oneonta,NY,13820,8,250,250,Dunkin',32
+Charge Point,195 Van Hill Road,Greeneville,TN,37745,3,400,62,Dunkin',49
+Tesla,158 Main Street,Ashland,NH,3217,8,250,250,Dunkin',50
+Charge Point,8281 grand river rd,Brighton,MI,48114,2,125,125,Dunkin',42
+Tesla,694 Motor Parkway,Hauppauge,NY,11788,8,250,250,Dunkin',47
+Charge Point,MA-24,Bridgewater,MA,2324,1,125,125,Dunkin',3
+Electrify America,694 Motor Pkwy,Hauppauge,NY,11788,4,150,50,Dunkin',13
+Tesla,299 Florida-91,Wildwood,FL,34785,8,250,250,Dunkin',40
+Tesla,779 McGrath Highway,Somerville,MA,2145,16,325,250,Dunkin',34
+EVgo,189 Forbes Ave,New Haven,CT,6512,1,50,50,Dunkin',31
+EVgo,697 Fairview Rd,Simpsonville,SC,29680,1,50,50,Dunkin',38
+Charge Point,2781 Lakeville Rd,Avon,NY,14414,2,125,125,Dunkin',15
+Charge Point,5744 Co Rd 20,Belmont,NY,14813,2,125,125,Dunkin',1
+Tesla,4950 Elm Street,Bethesda,MD,20814,12,250,250,Dunkin',34
+Tesla,365 Convery Boulevard,Perth Amboy,NJ,8861,8,250,250,Dunkin',38
+Applegreen,I-95 Northbound,Madison,CT,6443,2,150,100,Dunkin',41
+Charge Point,195 S River Rd,Bedford,NH,3110,1,62,62,Dunkin',41
+Tesla,1014 Edgefield Rd,North Augusta,SC,29860,8,250,250,Dunkin',43
+Charge Point,280 Providence St.,Worcester,MA,1607,2,125,125,Dunkin',26
+Applegreen,Route 15 Northbound,Greenwich,CT,6830,4,150,100,Dunkin',20
+Applegreen,I-395 Southbound,Plainfield,CT,6374,2,150,100,Dunkin',26
+Applegreen,I-95 Southbound,Darien,CT,6820,2,150,100,Dunkin',12
+Shell,2603 2nd Ave.,Muscatine,IA,52761,4,180,100,Dunkin',13
+Applegreen,I-95 Southbound,Branford,CT,6405,2,150,100,Dunkin',29
+Tesla,237 North St,Bennington,VT,5201,12,250,250,Dunkin',36
+FPL,1470 SW 8th St,Boynton Beach,FL,33426,2,120,50,Dunkin',10
+Tesla,1955 N Kings Hwy,Nash,TX,75569,20,250,250,Dunkin',49
+FPL,7900 SW Lost River Road,Stuart,FL,34997,4,120,50,Dunkin',39
+Charge Point,375 Kenneth Drive,Rochester,NY,14623,4,125,62,Dunkin',15
+swtch,26 West St,Annapolis,MD,21401,1,150,150,Dunkin',39
+Applegreen,Route 15 Northbound,Fairfield,CT,6825,2,150,100,Dunkin',40
+Applegreen,Route 15 Southbound,Fairfield,CT,6825,4,150,100,Dunkin',12
+Applegreen,Route 15 Northbound,North Haven,CT,6473,4,150,100,Dunkin',35
+Applegreen,Route 15 Northbound,North Haven,CT,6473,4,150,100,Dunkin',37
+Charge Point,415 Newark St.,Hoboken,NJ,7030,2,125,125,Dunkin',39
+Tesla,22 Hotel Dr,Lexington,VA,24450,12,250,250,Dunkin',35
+Ford,911 Shooting Park Rd,Peru,IL,61354,4,120,120,Dunkin',22
+Tesla,550 Smithtown Bypass,Smithtown,NY,11787,8,325,325,Dunkin',47
+EVgo,713 Oakland Circle,Raphine,VA,24472,4,350,350,Dunkin',5
+EVgo,3051 State Road 60,Okeechobee,FL,34972,4,350,350,Dunkin',0
+Electrify America,2877 E Main Street,Parish,NY,13131,4,350,350,Dunkin',1
+EVgo,1128 Duanesburg Road,Rotterdam,NY,12306,4,350,350,Dunkin',4
+EVgo,1600 County Road 437,Good Hope,AL,35055,4,350,350,Dunkin',5
+Charge Point,1827 Griffith Dr,Harriman,TN,37748,3,400,400,Dunkin',35
+Charge Point,1827 Griffith Dr,Harriman,TN,37748,1,400,400,Dunkin',35
+Blink,2345 U.S. 117,Goldsboro,NC,27530,2,180,180,Dunkin',1
+EVgo,15455 Terrazzo Drive,Monument,CO,80921,4,350,350,Dunkin',1
+Charge Point,61 Middlesex Turnpike,Burlington,MA,1803,2,320,320,Dunkin',24
+Rivian,16567 Lincoln Highway,Breezewood,PA,15533,6,300,300,Dunkin',14
+EVgo,503 N. Oakwood Street,Oakwood,IL,61858,4,350,350,Dunkin',11
+Red-E,8830 Main St,Birch Run,MI,48415,2,240,240,Dunkin',11
+Red-E,8281 Grand River Ave,Brighton,MI,48114,4,160,160,Dunkin',49
+Red-E,50 Baltimore Pike,Springfield,PA,19064,6,240,240,Dunkin',0
+FPL,9144 Forest Hill Blvd,Wellington,FL,33414,4,120,62,Dunkin',24
+FPL,905 E Prima Vista Blvd,Port St Lucie,FL,34952,2,200,200,Dunkin',47
+FPL,872 SE Becker Rd,Port St. Lucie,FL,34984,4,180,180,Dunkin',46
+Applegreen,PA Turnpike,Somerset,PA,15501,2,400,400,Dunkin',48
+EV Connect,9003 Bergenline Ave,North Bergen,NJ,7047,4,60,60,Dunkin',48
+EV Connect,4445 Selma Hwy,Montgomery,AL,36043,4,120,120,Dunkin',0
+Tesla,450 J Street,Sacramento,CA,95814,20,250,250,Panda Express,22
+Electrify America,6000 Sepulveda Blvd,Culver City,CA,90230,10,350,350,Panda Express,46
+Shell,3251 20Th Ave,San Francisco,CA,94132,1,50,50,Panda Express,37
+Tesla,6200 South Pennsylvania Avenue,Lansing,MI,48911,12,250,250,Panda Express,18
+Tesla,2290 Oak Grove Rd,Walnut Creek,CA,94598,12,250,250,Panda Express,47
+Tesla,5600 Blue Lagoon Dr,Miami,FL,33126,8,250,250,Panda Express,16
+EVgo,6000 Glenway Ave,Cincinnati,OH,45211,4,350,100,Panda Express,17
+Rivian,6200 South Pennsylvania Avenue,Lansing,MI,48911,6,300,300,Panda Express,34
+Red-E,850 Winfield Dunn Pkwy,Sevierville,TN,37876,2,120,120,Panda Express,31
+EVgo,8110 Mira Mesa Blvd,San Diego,CA,92126,6,350,100,Panda Express,33
+EV Connect,Milepost 96,South Ruby,NY,12449,2,50,50,Panda Express,6
+Tesla,700 E Horton Ave.,Colby,KS,67701,10,150,150,Starbucks,28
+Tesla,101 Allstate Road,Boston,MA,2125,10,72,72,Starbucks,7
+Tesla,201 W 75th Street,New York,NY,10023,4,72,72,Starbucks,47
+Tesla,3819 UnIONNA Deposit Rd,Harrisburg,PA,17109,8,150,150,Starbucks,47
+Tesla,1620 Canyon Rd,Ellensburg,WA,98926,5,150,150,Starbucks,30
+Charge Point,2988 Walker Ave NW,Grand Rapids,MI,49544,2,62,62,Starbucks,1
+Electrify America,6204 Glenwood Ave,Raleigh,NC,27612,6,350,350,Starbucks,47
+Tesla,9585 Southwest Washington Square Road,Portland,OR,97223,10,72,72,Starbucks,14
+Tesla,625 Atlantic Avenue B12,Brooklyn,NY,11217,12,72,72,Starbucks,21
+Tesla,2012 S Croatan Hwy,Kill Devil Hills,NC,27948,8,150,150,Starbucks,42
+Tesla,701 South Miami Avenue,Miami,FL,33130,13,72,72,Starbucks,47
+Tesla,1 Connecticut Turnpike,Milford,CT,6460,2,120,120,Starbucks,47
+Tesla,601 UnIONNA Street,Seattle,WA,98101,10,72,72,Starbucks,49
+Tesla,46600 SE North Bend Way,North Bend,WA,98045,8,250,250,Starbucks,25
+Electrify America,1190 N Main Street,Bishop,CA,93514,4,350,50,Starbucks,1
+Electrify America,10950 Sherman Way,Burbank,CA,91505,3,350,350,Starbucks,45
+Tesla,11860 Trade Street,North Bethesda,MD,20852,8,72,72,Starbucks,7
+Tesla,1-95 North Avenue,Madison,CT,6443,10,250,250,Starbucks,25
+Electrify America,1701 Santa Rita Road,Pleasanton,CA,94566,3,350,350,Starbucks,46
+Electrify America,7535 N. Kendall Dr.,Miami,FL,33156,3,350,350,Starbucks,48
+Electrify America,3970 SW Archer Road,Gainesville,FL,32608,4,350,350,Starbucks,45
+Charge Point,2501 Cornhusker Dr,South Sioux City,NE,68776,1,50,50,Starbucks,34
+Shell,7400 San Pedro Ave,San Antonio,TX,78216,1,50,50,Starbucks,41
+Tesla,2670 South Ferdon Boulevard,Crestview,FL,32536,8,250,250,Starbucks,7
+EV Connect,8700 Vallance Rd,Le Roy,NY,14482,2,100,100,Starbucks,43
+Tesla,2675 Geary Blvd,San Francisco,CA,94118,34,250,72,Starbucks,13
+Charge Point,11 Plaza Pkwy,Lexington,NC,27292,1,50,50,Starbucks,21
+Tesla,1 Hawes Way,Stoughton,MA,2072,12,250,250,Starbucks,47
+Electrify America,6615 NE Glisan St,Portland,OR,97213,4,150,50,Starbucks,49
+Electrify America,3246 E Bell Road,Phoenix,AZ,85032,4,350,350,Starbucks,34
+ChargeLab,5750 Merle Hay Rd,Johnston,IA,50131,1,150,150,Starbucks,1
+Shell,3251 20Th Ave,San Francisco,CA,94132,1,50,50,Starbucks,20
+Electrify America,55 Wanaque Ave,Pompton Lakes,NJ,7442,4,150,50,Starbucks,9
+Tesla,16520 Lincoln Highway,BREEZEWOOD,PA,15533,12,250,250,Starbucks,18
+Electrify America,656 Commack Rd,Commack,NY,11725,4,350,50,Starbucks,33
+Tesla,100 Village Center Drive,Chapel Hill,NC,27516,10,250,250,Starbucks,42
+EVgo,413 Elden St,Herndon,VA,20170,4,200,100,Starbucks,9
+EVgo,2501 9th Rd S,Arlington,VA,22204,4,50,50,Starbucks,37
+EVgo,7801 Leesburg Pike,Falls Church,VA,22043,2,200,100,Starbucks,0
+EVgo,4028 Wards Rd,Lynchburg,VA,24502,2,50,50,Starbucks,12
+EVgo,1688 Anderson Rd,McLean,VA,22102,4,200,100,Starbucks,30
+Tesla,6603  Betty Drive,Visalia,CA,93291,19,250,250,Starbucks,49
+EVgo,4520 Van Nuys Blvd,Sherman Oaks,CA,91403,1,50,50,Starbucks,37
+Charge Point,979 S University Ave,Provo,UT,84601,4,125,125,Starbucks,2
+Charge Point,979 S University Ave,Provo,UT,84601,4,125,125,Starbucks,6
+Tesla,1000  Oakvale Road,Princeton,WV,24740,8,250,250,Starbucks,48
+Charge Point,1951 Bridgeview Blvd,Twin Falls,ID,83301,2,125,125,Starbucks,13
+Shell,One Providence Place,Providence,RI,2903,1,50,50,Starbucks,46
+Charge Point,6680 2500 E,Uintah,UT,84405,4,125,125,Starbucks,43
+Applegreen,I-95 Northbound,Madison,CT,6443,2,150,100,Starbucks,4
+Charge Point,2712 Island Ave,La Grande,OR,97850,4,125,125,Starbucks,38
+EVgo,4630 Monticello Ave,Williamsburg,VA,23188,4,50,50,Starbucks,28
+Charge Point,375 NJ-17,Paramus,NJ,7652,2,125,125,Starbucks,33
+FPL,9200 FL-228,Macclenny,FL,32063,4,90,50,Starbucks,20
+Electrify America,390 Hackensack Ave,Hackensack,NJ,7601,4,350,350,Starbucks,39
+Electrify America,8156 S Wadsworth Blvd,Littleton,CO,80128,6,350,350,Starbucks,43
+Electrify America,18325 Aurora Ave N,Shoreline,WA,98133,4,350,350,Starbucks,4
+Electrify America,2424 Crater Lake Hwy,Medford,OR,97504,6,350,350,Starbucks,45
+Charge Point,3805 S Soto St,Vernon,CA,90058,10,125,125,Starbucks,29
+Charge Point,771 S Randall Rd,Algonquin,IL,60102,2,62,62,Starbucks,14
+Tesla,1149 DivisIONNA St,Warwick,RI,2818,8,250,250,Starbucks,19
+Tesla,3805 S Soto St,Vernon,CA,90058,8,250,250,Starbucks,40
+Charge Point,525 US-287,Broomfield,CO,80020,2,62,62,Starbucks,2
+Charge Point,5 6th Street North,Nampa,ID,83687,2,200,200,Starbucks,20
+EVgo,7646 State Ave,Kansas City,KS,66112,4,350,100,Starbucks,31
+Tesla,1300  E 86th St,Indianapolis,IN,46240,16,250,250,Starbucks,43
+Blink,2610 Arena Boulevard,Sacramento,CA,95834,2,60,60,Starbucks,3
+Charge Point,715 Blue River Parkway,Silverthorne,CO,80498,3,200,160,Starbucks,44
+Charge Point,715 Blue River Parkway,Silverthorne,CO,80498,1,160,160,Starbucks,44
+Tesla,3035 Cropsey Ave,Brooklyn,NY,11224,12,250,250,Starbucks,35
+Tesla,12161 Eastlake Blvd,El Paso,TX,79928,8,250,250,Starbucks,44
+Charge Point,308 W Taylor Ave,Wildwood,NJ,8260,2,250,250,Starbucks,15
+Tesla,1969 Central Park Avenue,Yonkers,NY,10710,11,250,250,Starbucks,26
+ChargeLab,2540 E Euclid Ave,Des Moines,IA,50317,1,150,150,Starbucks,10
+FPL,6676 US-129,Live Oak,FL,32060,4,120,50,Starbucks,19
+Tesla,145-147 Clinton Ave,Cortland,NY,13045,8,250,250,Starbucks,29
+Tesla,19  Plaza Parkway,Lexington,NC,27292,16,250,250,Starbucks,41
+Shell,1656 S Market St Hearne,Hearne,TX,77859,12,180,180,Starbucks,1
+Tesla,3401 Idaho Ave NW,Washington,DC,20016,8,250,250,Starbucks,19
+Tesla,1070 S White Rd,San Jose,CA,95127,12,325,325,Starbucks,39
+Tesla,3622 Cobb Pkwy NW,Acworth,GA,30101,8,325,325,Starbucks,21
+Tesla,419 Market St,Saddle Brook,NJ,7663,8,250,250,Starbucks,48
+Tesla,5600 Blue Lagoon Dr,Miami,FL,33126,8,250,250,Starbucks,45
+Charge Point,38010 MissIONNA Blvd,Fremont,CA,94536,1,62,62,Starbucks,6
+Charge Point,38010 MissIONNA Blvd,Fremont,CA,94536,1,62,62,Starbucks,14
+Charge Point,100 River Oaks Dr,Wetumpka,AL,36092,2,250,250,Starbucks,0
+Tesla,8500 Holcomb Bridge Rd,Alpharetta,GA,30022,8,325,325,Starbucks,30
+Tesla,1203 N JK Powell Blvd,Whiteville,NC,28472,12,325,325,Starbucks,10
+EVgo,531 Brookwood Village,Homewood,AL,35209,6,350,100,Starbucks,0
+Charge Point,45 TransportatIONNA Wy,Boston,MA,2128,2,62,62,Starbucks,21
+ChargeLab,555 S. 51st Street,West DesMoines,IA,50265,2,150,150,Starbucks,12
+ChargeLab,3590 Prairie Fire NW,Altoona,IA,50009,2,50,50,Starbucks,39
+Red-E,850 Winfield Dunn Pkwy,Sevierville,TN,37876,2,120,120,Starbucks,31
+Tesla,6301 Grayson Rd,Harrisburg,PA,17111,12,325,325,Starbucks,43
+Tesla,100 Colony Place,Plymouth,MA,2360,8,325,325,Starbucks,49
+EVgo,1112 Woodruff Rd,Greenville,SC,29607,6,350,350,Starbucks,8
+Charge Point,10 Muar Street,Canandaigua,NY,14424,4,200,200,Starbucks,47
+Tesla,1758 W Grand Ave,Grover Beach,CA,93433,20,325,325,Starbucks,20
+EVgo,6350 Sheridan Blvd,Arvada,CO,80003,6,350,100,Starbucks,32
+EVgo,7544 Girard Ave,La Jolla,CA,92037,4,350,100,Starbucks,28
+EVgo,1530 Hamilton Ave,San Jose,CA,95125,8,350,100,Starbucks,36
+EVgo,1655 S El Camino Real,San Mateo,CA,94402,8,350,100,Starbucks,21
+Tesla,7255 Interstate Blvd,Horn Lake,MS,38637,12,325,325,Starbucks,27
+EVCS,222 36th St,Bellingham,WA,98225,2,175,50,Starbucks,1
+EVCS,51501 Columbia River Hwy,Scappoose,OR,97056,1,50,50,Starbucks,23
+EVCS,944 SW Veterans Way,Redmond,OR,97756,1,50,50,Starbucks,49
+Applegreen,GSP Turnpike Northbound (Mile Marker 142),UnIONNA,NJ,7093,2,400,400,Starbucks,36
+Tesla,905 Steele StatIONNA Road,Steele,AL,35987,8,150,150,Subway,2
+Tesla,14925 Cordes Lakes Rd,Mayer,AZ,86333,8,150,150,Subway,17
+Electrify America,2333 63rd St,Woodridge,IL,60517,3,350,150,Subway,22
+Tesla,1156  CO-71,Brush,CO,80723,8,150,150,Subway,39
+Electrify America,17432 SE 270th PL,Covington,WA,98042,3,350,50,Subway,23
+Electrify America,901 N Sheb Wooley Ave.,Erick,OK,73645,4,350,50,Subway,40
+Tesla,1 Connecticut Turnpike,Milford,CT,6460,2,120,120,Subway,49
+FCN,10601 S May Ave,Oklahoma City,OK,73170,4,50,50,Subway,33
+Electrify America,20 Gills StatIONNA Road,Olancha,CA,93549,4,350,50,Subway,33
+Charge Point,15423 Old US 27 North,Marshall,MI,49068,2,125,125,Subway,26
+Charge Point,20672 Tracy Ave,Buttonwillow,CA,93206,3,62,62,Subway,17
+Charge Point,90 Cisco Rd,Soda Springs,CA,95728,2,62,62,Subway,22
+Electrify America,760 S Quartzsite Blvd,Quartzsite,AZ,85346,4,350,50,Subway,8
+Tesla,171 Boatyard Drive,Fort Bragg,CA,95437,12,250,250,Subway,36
+Electrify America,21959 CA-46,Lost Hills,CA,93249,4,350,350,Subway,47
+Charge Point,120 Sugar Leo Rd,St. George,UT,84790,1,125,125,Subway,30
+Charge Point,145 W Brigham Rd,St. George,UT,84790,1,125,125,Subway,28
+Charge Point,276 E 1st St,Akron,CO,80720,1,62,62,Subway,23
+Charge Point,706 S Woody Guthrie St,Okemah,OK,74859,2,125,125,Subway,21
+Tesla,405  US-281,Johnson City,TX,78636,8,250,250,Subway,20
+Charge Point,6529 Pony Express Trail,Pollock Pines,CA,95726,1,62,62,Subway,32
+Charge Point,3980 US-17,Richmond Hill,GA,31324,2,125,125,Subway,27
+Charge Point,22 6th St NW,Hillsboro,ND,58045,1,62,62,Subway,44
+Tesla,104 East Winthrop Avenue,Millen,GA,30442,8,250,250,Subway,25
+Tesla,715 Lang Creek Ave,Grinnell,IA,50112,8,250,250,Subway,50
+Charge Point,1917 VT-66,Randolph,VT,5060,2,125,125,Subway,30
+Charge Point,5982 AL-157,Cullman,AL,35058,2,125,125,Subway,44
+EVgo,776 Gravenstein Hwy N,Sebastopol,CA,95472,2,50,50,Subway,27
+EVgo,3935 Park Dr,El Dorado Hills,CA,95762,2,100,100,Subway,47
+EVgo,100 Renaissance Ctr,Detroit,MI,48243,4,350,350,Subway,29
+Tesla,14521 Red Hill Avenue,Tustin,CA,92780,12,250,250,Subway,10
+Charge Point,1171 US-11W,Bean StatIONNA,TN,37708,2,125,125,Subway,44
+Charge Point,301 Odlin Rd,Bangor,ME,4401,2,125,125,Subway,23
+Applegreen,I-95 Northbound,Madison,CT,6443,2,150,100,Subway,33
+Tesla,8037 Euclid Ave,Cleveland,OH,44103,12,250,250,Subway,50
+Tesla,4959 Katella Ave,Cypress,CA,90720,16,250,250,Subway,48
+Charge Point,206 Center Rd,Fairfield,ME,4937,2,125,125,Subway,42
+Electrify America,554 W Baseline Rd,Mesa,AZ,85210,4,350,350,Subway,30
+Electrify America,22 NY-138,Goldens Bridge,NY,10526,6,350,50,Subway,42
+Electrify America,2 Pennsylvania Ave,Friendship,NY,14739,4,350,50,Subway,11
+Red-E,8733 Swan Creek Rd,Newport,MI,48166,4,160,160,Subway,1
+CircleK,674 Chicken Foot Rd,Hope Mills,NC,28348,4,180,180,Subway,3
+EVgo,3636 W 5th Ave,Post Falls,ID,83854,4,350,350,Subway,2
+Charge Point,280 Providence St.,Worcester,MA,1607,2,125,125,Subway,40
+Charge Point,1244 US-20,Chadron,NE,69337,2,125,125,Subway,22
+EV Connect,32981 Windy Hill Rd,Maple Hill,KS,66507,4,350,350,Subway,18
+Applegreen,Route 15 Northbound,Greenwich,CT,6830,4,150,100,Subway,20
+Applegreen,I-395 Southbound,Plainfield,CT,6374,2,150,100,Subway,28
+Applegreen,I-95 Southbound,Darien,CT,6820,2,150,100,Subway,7
+Tesla,90  Cisco Rd,Soda Springs,CA,95728,12,250,250,Subway,39
+Applegreen,I-95 Southbound,Branford,CT,6405,2,150,100,Subway,28
+EVgo,2799 Lone Tree Way,Antioch,CA,94509,8,350,350,Subway,41
+Tesla,1510 W Main St,Salem,IL,62881,12,250,250,Subway,3
+Tesla,1000 Grizzly Tr,Butte,MT,59701,8,250,250,Subway,41
+EVgo,995 US Route 9,Castleton-On-Hudson,NY,12033,4,350,350,Subway,16
+Tesla,8790 S Maryland Pkwy,Las Vegas,NV,89123,24,250,250,Subway,40
+Tesla,625  North Arrowleaf Trail,Sisters,OR,97759,8,250,250,Subway,21
+Tesla,3734 ConstellatIONNA Rd,Lompoc,CA,93436,12,250,250,Subway,49
+Charge Point,90 W Oak St,McRae-Helena,GA,31055,2,320,320,Subway,34
+Applegreen,Route 15 Northbound,Fairfield,CT,6825,2,150,100,Subway,42
+Applegreen,Route 15 Northbound,North Haven,CT,6473,4,150,100,Subway,35
+Applegreen,Route 15 Northbound,North Haven,CT,6473,4,150,100,Subway,41
+EVgo,7801 Alcoa Rd,Benton,AR,72019,4,350,350,Subway,8
+EVgo,1530 Rest Church Rd,Winchester,VA,22624,4,350,350,Subway,3
+Charge Point,1199 10th Avenue South,Sweet Home,OR,97386,1,62,62,Subway,42
+EVgo,5820 Hagman Road,Toledo,OH,43612,4,350,350,Subway,31
+EVgo,4431 UnIONNA Road,Tifton,GA,31794,4,350,350,Subway,42
+Charge Point,2255 State Hwy 121,Bonham,TX,75418,2,125,125,Subway,9
+Tesla,1778 W 2700 N,Farr West,UT,84404,14,325,325,Subway,40
+CircleK,1800 Dothan Rd,Bainbridge,GA,39817,4,180,180,Subway,4
+EVgo,6141 US 127 North,Eaton,OH,45320,4,350,350,Subway,2
+EVgo,66377 Belmont-Morristown Rd,Belmont,OH,43718,4,350,350,Subway,42
+EVgo,14555 I-35 South,Von Ormy,TX,78073,4,350,350,Subway,17
+Blink,"11402 Northwest 41st Street, Suite 201",Doral,FL,33178,2,60,60,Subway,44
+EVgo,2400 Alliance Gateway Fwy,Fort Worth,TX,76177,4,350,350,Subway,3
+EVgo,130 Honda Drive,Lincoln,AL,35096,4,350,350,Subway,9
+EVgo,3240 Point Mallard Parkway,Priceville,AL,35603,4,350,350,Subway,2
+EVgo,2611 Vernell Rd,MarIONNA,IL,62959,4,350,350,Subway,40
+Electrify America,2877 E Main Street,Parish,NY,13131,4,350,350,Subway,1
+EVgo,1128 Duanesburg Road,Rotterdam,NY,12306,4,350,350,Subway,8
+Charge Point,202 North Main Street,Lancaster,NH,3584,2,125,125,Subway,2
+EVgo,2424 Wadhams Road,Smiths Creek,MI,48074,4,350,350,Subway,5
+Charge Point,167 Chicopee St,Chicopee,MA,1013,2,160,160,Subway,2
+Charge Point,1262 New York 414,Waterloo,NY,13165,4,400,400,Subway,41
+EVgo,11775 NE-11,Wood River,NE,68883,4,350,350,Subway,26
+Charge Point,4045 Marietta Hwy,Canton,GA,30114,2,320,320,Subway,50
+EV Connect,1736 North Carolina 67,Jonesville,NC,28642,4,150,150,Subway,8
+EVgo,905 American Road,Napoleon,OH,43545,4,350,350,Subway,24
+EVgo,2825 Lane Street,Kannapolis,NC,28083,5,350,100,Subway,2
+Tesla,217 N Alamo St,Refugio,TX,78377,8,325,325,Subway,49
+Rivian,942 East Pima Street,Gila Bend,AZ,85337,5,300,300,Subway,18
+Rivian,401 Scott St W,Gardiner,MT,59030,4,300,300,Subway,22
+Rivian,20673 Tracy Avenue,Buttonwillow,CA,93206,9,300,300,Subway,33
+Rivian,17044 County Road 5,Flagler,CO,80815,6,300,300,Subway,39
+Graviti,10403 I-10,Mont Belvieu,TX,77580,4,150,150,Subway,10
+EVgo,109450 US-97,Chemult,OR,97731,4,350,350,Subway,48
+Red-E,2460 FM464,Seguin,TX,78155,2,150,150,Subway,0
+Red-E,3703 I-35,Gainesville,TX,76240,2,150,150,Subway,24
+EVgo,8035 Perry Highway,Erie,PA,16509,4,350,350,Subway,16
+EVgo,305 W. Abrahames Road,Moriarty,NM,87035,4,350,350,Subway,18
+Red-E,5195 Beckley Rd,Battle Creek,MI,49015,2,240,240,Subway,16
+Red-E,21110 Mack Ave,Grosse Pointe Woods,MI,48236,4,160,160,Subway,49
+Blink,602 U.S. HWY 117 N,Burgaw,NC,28425,2,180,180,Subway,6
+EVgo,950 State Road 206 West,St. Augustine,FL,32086,4,350,350,Subway,36
+Charge Point,499 Loves Dr,Sparta,KY,41086,4,320,320,Subway,50
+Red-E,92 Prospect St,Milford,MA,1757,6,120,120,Subway,1
+FPL,17457 NE US Hwy 301,Waldo,FL,32694,4,200,62,Subway,45
+FPL,1609 N Nova Rd,Holly Hill,FL,32117,4,180,180,Subway,46
+EVgo,4401 32nd Avenue South,Grand Forks,ND,58201,4,350,350,Subway,17
+Charge Point,2106 Mt Holly Rd,Burlington,NJ,8016,1,50,50,Subway,32
+CircleK,12231 W Clearwater Ave,Kennewick,WA,99338,4,180,180,Subway,2
+EV Connect,5310 W Spruce Ave,Fresno,CA,93722,10,50,50,Subway,0
+EV Connect,776 TX-179,Teague,TX,75860,2,150,150,Subway,27
+EV Connect,1001 Casitas Pass Rd,Carpinteria,CA,93013,2,150,100,Subway,37
+EV Connect,301 Bell St,Dubuque,IA,52001,2,100,100,Subway,6
+EV Connect,1848 Beckendorff Rd,Sealy,TX,77474,2,150,150,Subway,0
+EV Connect,100 Macy St,Amesbury,MA,1913,2,50,50,Subway,10
+EV Connect,2460 FM464,Seguin,TX,78155,2,150,150,Subway,7
+Red-E,776 TX-179,Teague,TX,75860,1,150,150,Subway,44
+Tesla,John F Kennedy Memorial Hwy,North East,MD,21901,10,150,150,Wendy's,1
+Tesla,1030 North Center Avenue,Somerset,PA,15501,6,150,150,Wendy's,26
+Tesla,1156  CO-71,Brush,CO,80723,8,150,150,Wendy's,35
+Tesla,3379 Crompond Road,Yorktown Heights,NY,10589,12,150,150,Wendy's,31
+Charge Point,3760 32nd Ave S,Grand Forks,ND,58201,1,62,62,Wendy's,46
+Tesla,434 Edwards Access Road,Edwards,CO,81632,12,250,250,Wendy's,43
+Tesla,299 Florida-91,Wildwood,FL,34785,8,250,250,Wendy's,40
+Electrify America,434 Edwards Access Rd,Edwards,CO,81632,4,350,350,Wendy's,20
+EV Connect,611 S Sylvania Ave,Sturtevant,WI,53177,2,100,100,Wendy's,36
+Tesla,1615 N Hervey St,Hope,AR,71801,16,250,250,Wendy's,12
+Blink,2610 Arena Boulevard,Sacramento,CA,95834,2,60,60,Wendy's,46
+EVgo,110 Triport Road,Georgetown,KY,40324,4,350,350,Wendy's,47
+EVgo,139 Factory Outlet Dr,Fort Chiswell,VA,24360,4,350,350,Wendy's,48
+Tesla,8001 E Expressway 83,Mercedes,TX,78570,12,250,250,Wendy's,7
+Red-E,13280 IL-47,Huntley,IL,60142,2,160,160,Wendy's,43
+Tesla,1778 W 2700 N,Farr West,UT,84404,14,325,325,Wendy's,27
+EVgo,1201 I-20 West,Weatherford,TX,76087,4,350,350,Wendy's,45
+EVgo,713 Oakland Circle,Raphine,VA,24472,4,350,350,Wendy's,2
+Tesla,175 Rte 4,Paramus,NJ,7652,12,325,325,Wendy's,32
+EVgo,3240 Point Mallard Parkway,Priceville,AL,35603,4,350,350,Wendy's,22
+EVgo,1600 County Road 437,Good Hope,AL,35055,4,350,350,Wendy's,6
+Charge Point,1262 New York 414,Waterloo,NY,13165,4,400,400,Wendy's,41
+Red-E,2460 FM464,Seguin,TX,78155,2,150,150,Wendy's,0
+EVgo,769 East Frontage Road,Rio Rico,AZ,85648,4,350,350,Wendy's,7
+FPL,25 NE 167th St,Miami,FL,33162,4,120,50,Wendy's,3
+FPL,645 NW 57th Ave,Miami,FL,33126,2,120,62,Wendy's,25
+EVCS,817 Harrison Avenue,Centralia,WA,98531,2,175,50,Wendy's,4
+CircleK,5633 W Cortaro Farms Rd,Marana,AZ,85742,8,180,180,Wendy's,1
+EV Connect,776 TX-179,Teague,TX,75860,2,150,150,Wendy's,32
+EV Connect,2460 FM464,Seguin,TX,78155,2,150,150,Wendy's,7
+Red-E,776 TX-179,Teague,TX,75860,1,150,150,Wendy's,44
+Tesla,108 Jackson Creek Road,Grasonville,MD,21638,9,150,150,Royal Farms,46
+Tesla,12826A Ocean Gateway,Ocean City,MD,21842,6,250,250,Royal Farms,35
+Tesla,5360 Nottingham Drive,White Marsh,MD,21162,8,250,250,Royal Farms,41
+Tesla,7655 Ocean Gateway,Easton,MD,21601,8,250,250,Royal Farms,49
+Charge Point,10740 Pulaski Hwy,White Marsh,MD,21162,2,50,50,Royal Farms,48
+Tesla,5031 Horseshoe Pike,Downingtown,PA,19335,8,250,250,Royal Farms,42
+Tesla,690 Watkins Mill Road,Gaithersburg,MD,20879,7,250,250,Royal Farms,44
+Blink,1818 Baltimore Boulevard,Westminster,MD,21157,2,60,60,Royal Farms,3
+Blink,304 North Dupont Boulevard,Smyrna,DE,19977,4,60,60,Royal Farms,4
+Blink,10740 Pulaski Highway,White Marsh,MD,21162,4,60,60,Royal Farms,34
+Blink,500 Mechanics Valley Road,North East,MD,21901,2,60,60,Royal Farms,3
+Blink,1114 Maryland 3,Gambrills,MD,21054,2,60,60,Royal Farms,2
+Blink,11119 McCormick Road,Hunt Valley,MD,21031,4,180,180,Royal Farms,3
+Blink,12826 Ocean Gateway,Ocean City,MD,21842,2,60,60,Royal Farms,22
+Blink,2703 Ocean Gateway,Cambridge,MD,21613,4,180,180,Royal Farms,0
+Tesla,2160  New Castle Avenue,New Castle,DE,19720,12,250,250,Royal Farms,1
+Blink,58 Atlantic Avenue,Ocean View,DE,19970,4,180,180,Royal Farms,3
+Blink,7900 Royalty Way,Salisbury,MD,21801,4,180,180,Royal Farms,2
+Tesla,8824 Wards Road,Rustburg,VA,24588,12,325,325,Royal Farms,4
+Blink,30217 Commerce Drive,Millsboro,DE,19966,4,180,180,Royal Farms,8
+Blink,3901 Ten Oaks Road,Glenelg,MD,21737,4,180,180,Royal Farms,9
+Tesla,12 S Black Horse Pike,Bellmawr,NJ,8031,8,325,325,Royal Farms,41
+Tesla,340 Evesham Ave E,Magnolia,NJ,8049,8,325,325,Royal Farms,46
+Electrify America,3505 Washington Blvd,Lansdowne,MD,21227,6,350,350,Royal Farms,25
+Tesla,71808 Baker Blvd,Baker,CA,92309,96,250,150,Dairy Queen,47
+Tesla,2451 Needles HWY,Needles,CA,92363,4,150,150,Dairy Queen,38
+Tesla,121  Parker Padgett Road,Old Fort,NC,28762,12,250,250,Dairy Queen,34
+Electrify America,1964 E King Street,Chamberlain,SD,57325,6,350,350,Dairy Queen,35
+EV Connect,520 E Main St,Biscoe,NC,27209,2,200,100,Dairy Queen,6
+CircleK,3604 N Mattis,Champaign,IL,61822,4,180,180,Dairy Queen,8
+Tesla,439 Pooler Pkwy,Pooler,GA,31322,8,250,250,Dairy Queen,47
+Charge Point,433 N Main St,Kilmarnock,VA,22482,2,125,125,Dairy Queen,0
+Evgo,2120 Springs Rd,Vallejo,CA,94591,6,350,350,Dairy Queen,1
+EVCS,483 SE 5th St,Madras,OR,97741,4,175,50,Dairy Queen,28
