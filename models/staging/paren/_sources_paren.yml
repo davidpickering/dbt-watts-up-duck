@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: paren
+    database: raw
+    schema: paren
+    tables:
+        - name: paren_qsr_sample

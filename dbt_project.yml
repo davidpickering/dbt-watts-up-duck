@@ -1,0 +1,19 @@
+name: 'watts_up_duck'
+version: '1.0.0'
+
+profile: 'watts_up_duck'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  watts_up_duck:
+    +materialized: view

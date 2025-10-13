@@ -1,4 +1,8 @@
 .venv
 *.db
+*.duckdb
+dbt_packages/
 target/
 project_data/**/*.csv
+logs/
+dbt_internal_packages/

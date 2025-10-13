@@ -64,6 +64,7 @@ def copy_csv_files(source_path: str, csv_files: Optional[List[str]] = None,
 
 
 # Download latest version
+# https://www.kaggle.com/datasets/tarekmasryo/global-ev-charging-stations
 path = kagglehub.dataset_download("tarekmasryo/global-ev-charging-stations")
 print("Path to dataset files:", path)
 
@@ -79,6 +80,7 @@ csv_files_to_copy = [
 copy_csv_files(path, csv_files_to_copy, "project_data/tarekmasryo")
 
 # 2nd dataset
+# https://www.kaggle.com/datasets/anshtanwar/residential-ev-chargingfrom-apartment-buildings
 path = kagglehub.dataset_download("anshtanwar/residential-ev-chargingfrom-apartment-buildings")
 print("Path to dataset files:", path)
 
@@ -88,6 +90,7 @@ copy_csv_files(path, None, "project_data/anshtanwar")
 ### 3rd dataset
 
 # Download latest version
+# https://www.kaggle.com/datasets/datasetengineer/ev-intelligent-port-logistics
 path = kagglehub.dataset_download("datasetengineer/ev-intelligent-port-logistics")
 
 print("Path to dataset files:", path)
