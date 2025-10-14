@@ -16,6 +16,7 @@ print(databases)
 # Create schemas for organizing raw data
 con.execute("CREATE SCHEMA IF NOT EXISTS raw.paren")
 con.execute("CREATE SCHEMA IF NOT EXISTS raw.dcfast")
+con.execute("CREATE SCHEMA IF NOT EXISTS raw.geocoding")
 
 # Show schemas that exist
 schemas = con.execute("SELECT * FROM duckdb_schemas()").df()
