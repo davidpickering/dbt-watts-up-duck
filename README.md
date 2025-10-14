@@ -23,3 +23,15 @@ watts_up_duck:
 ```
 
 4. Run kaggle.py
+
+## Load New Data
+
+1. Land the data in project_data/ or a suitable outside storage location
+
+2. Modify the 3-load_raw_data.py script to load the data into DuckDB, and run
+
+3. Add the source to the _sources.yml file
+
+4. Create Staging Model
+
+5. Document the model in the appropriate _models.yml file

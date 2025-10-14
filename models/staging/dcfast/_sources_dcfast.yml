@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: dcfast
+    database: raw
+    schema: dcfast
+    tables:
+        - name: world_charging_stations
+        - name: ev_models_2025

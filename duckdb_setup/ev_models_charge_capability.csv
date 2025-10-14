@@ -1,0 +1,61 @@
+make,model,first_year,onboard_charger_kw,dc_fast_charge_max_kw
+Tesla,Model S,2012,11.5,250
+Tesla,Model 3,2017,11.5,250
+Tesla,Model X,2015,11.5,250
+Tesla,Model Y,2020,11.5,250
+Tesla,Cybertruck,2023,11.5,250
+Nissan,Leaf,2010,6.6,100
+Chevrolet,Bolt EV,2016,11,55
+Chevrolet,Bolt EUV,2021,11,55
+Ford,Mustang Mach-E,2020,11,150
+Ford,F-150 Lightning,2022,19.2,150
+Volkswagen,ID.4,2020,11,135
+Volkswagen,ID. Buzz,2022,11,170
+Audi,Q4 e-tron,2021,11,135
+Porsche,Taycan,2019,11,270
+Hyundai,Kona Electric,2018,7.2,77
+Hyundai,IONIQ 5,2021,11,350
+Hyundai,IONIQ 6,2022,11,350
+Kia,EV6,2021,11,350
+Kia,EV9,2023,11,350
+Genesis,GV60,2022,11,350
+BMW,i4,2021,11,200
+BMW,iX,2021,11,200
+BMW,i5,2023,11,205
+Mercedes-Benz,EQB,2021,11,100
+Mercedes-Benz,EQE,2022,11,170
+Mercedes-Benz,EQS,2021,11,200
+Volvo,XC40 Recharge,2020,11,150
+Volvo,C40 Recharge,2021,11,150
+Volvo,EX90,2024,11,250
+Polestar,2,2019,11,155
+Polestar,3,2023,11,250
+Fiat,500e,2020,11,85
+Toyota,bZ4X,2022,6.6,150
+Subaru,Solterra,2022,6.6,150
+Jaguar,I-Pace,2018,11,100
+Lucid,Air,2021,19.2,300
+Lucid,Gravity,2025,19.2,300
+Rivian,R1T,2021,11.5,220
+Rivian,R1S,2022,11.5,220
+Audi,e-tron GT,2021,11,270
+Audi,Q8 e-tron,2023,11,170
+BMW,i7,2022,11,195
+Mercedes-Benz,EQE SUV,2023,11,170
+Mercedes-Benz,EQS SUV,2022,11,200
+Rolls-Royce,Spectre,2023,11,195
+Nissan,Ariya,2022,7.2,130
+Lexus,RZ,2022,6.6,150
+Honda,Prologue,2024,11,155
+Kia,Niro EV,2018,7.2,77
+Volvo,EX40,2020,11,150
+Volvo,EC40,2021,11,150
+Polestar,4,2023,11,200
+VinFast,VF8,2022,11,150
+VinFast,VF9,2023,11,150
+Chevrolet,Blazer EV,2023,11.5,190
+Chevrolet,Equinox EV,2024,11.5,150
+Chevrolet,Silverado EV,2023,19.2,350
+GMC,Hummer EV,2021,19.2,350
+Cadillac,Lyriq,2022,19.2,190
+Cadillac,Escalade IQ,2024,19.2,350
