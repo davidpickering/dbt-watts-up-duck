@@ -30,11 +30,11 @@ watts_up_duck:
   target: dev
 ```
 8. Install dbt dependencies using `dbt deps`
-8. Accomplish project-specific setup from the root directory:
-  - 8.1 run `python duckdb_setup/1-setup_duckdb.py  `
-  - 8.2 run `python duckdb_setup/2-kaggle.py` - This will download the datasets from Kaggle and copy them to the project_data directory
-  - 8.3 run `python duckdb_setup/3-load_raw_data.py` - This will load the raw data into the DuckDB database
-9. Verify successful setup of DuckDB, and loading of raw data to landing zone by running `dbt build`. You should see similar output to the following:
+9. Accomplish project-specific setup from the root directory:
+  - 9.1 run `python duckdb_setup/1-setup_duckdb.py ` - This will setup DuckDB with the proper database and schema names
+  - 9.2 run `python duckdb_setup/2-kaggle.py` - This will download the datasets from Kaggle and copy them to the project_data directory
+  - 9.3 run `python duckdb_setup/3-load_raw_data.py` - This will load the raw data into the DuckDB database
+10. Verify successful setup of DuckDB, and loading of raw data to landing zone by running `dbt build`. You should see similar output to the following:
 ```
 $ dbt build
 16:59:08  Running with dbt=1.10.13
@@ -53,3 +53,17 @@ $ dbt build
 16:59:12
 16:59:12  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
 ```
+
+## Project Life Cycle
+
+### Load New Data
+
+1. Land the data in project_data/ or a suitable outside storage location
+
+2. Modify the 3-load_raw_data.py script to load the data into DuckDB
+
+3. Add the source to the _sources.yml file
+
+4. Create Staging Model
+
+5. Document the model in the appropriate _models.yml file

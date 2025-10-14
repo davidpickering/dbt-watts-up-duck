@@ -6,4 +6,5 @@ target/
 project_data/**/*.csv
 logs/
 dbt_internal_packages/
+.claude/
 .cursor/mcp.json

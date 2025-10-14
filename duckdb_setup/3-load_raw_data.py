@@ -38,6 +38,54 @@ print(result)
 result = show_sample(dbname="raw", schemaname="paren", tablename="paren_qsr_sample")
 print(f"\nSample data: {result}")
 
+##EV Model Charge Capability
 
+### Load CSV directly into a table
+con.execute("""
+    CREATE OR REPLACE TABLE raw.paren.ev_models_charge_capability AS
+    SELECT * FROM 'project_data/ev_models_charge_capability.csv'
+""")
+
+### Verify it loaded
+result = state_table_row_count(dbname="raw", schemaname="paren", tablename="ev_models_charge_capability")
+print(result)
+
+### Show sample
+result = show_sample(dbname="raw", schemaname="paren", tablename="ev_models_charge_capability")
+print(f"\nSample data: {result}")
+
+
+# anshtanwar
+# datasetengineer
 # Tarekmasyro
+## charging_stations_2025_world.csv
+### Load CSV directly into a table
+con.execute("""
+    CREATE OR REPLACE TABLE raw.dcfast.world_charging_stations AS
+    SELECT * FROM 'project_data/tarekmasryo/charging_stations_2025_world.csv'
+""")
+
+### Verify it loaded
+result = state_table_row_count(dbname="raw", schemaname="dcfast", tablename="world_charging_stations")
+print(result)
+
+### Show sample
+result = show_sample(dbname="raw", schemaname="dcfast", tablename="world_charging_stations")
+print(f"\nSample data: {result}")
+
+## ev_models_2025.csv
+### Load CSV directly into a table
+con.execute("""
+    CREATE OR REPLACE TABLE raw.dcfast.ev_models_2025 AS
+    SELECT * FROM 'project_data/tarekmasryo/ev_models_2025.csv'
+""")
+
+### Verify it loaded
+result = state_table_row_count(dbname="raw", schemaname="dcfast", tablename="ev_models_2025")
+print(result)
+
+### Show sample
+result = show_sample(dbname="raw", schemaname="dcfast", tablename="ev_models_2025")
+print(f"\nSample data: {result}")
+
 con.close()

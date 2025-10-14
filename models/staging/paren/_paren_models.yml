@@ -1,0 +1,55 @@
+version: 2
+
+models:
+  - name: stg_paren__charge_points
+    description: Staging model for Paren EV charging station data with standardized addresses and surrogate keys
+    columns:
+      - name: chargepoint_sk
+        description: Surrogate key for charge point, generated from network and address
+        tests:
+          - unique
+          - not_null
+
+      - name: network
+        description: EV charging network name
+
+      - name: street_raw
+        description: Raw street address from source data
+
+      - name: city_raw
+        description: Raw city name from source data
+
+      - name: state_raw
+        description: Raw state from source data
+
+      - name: zip_code_raw
+        description: Raw zip code from source data
+
+      - name: street_address_1
+        description: Standardized street address line 1
+
+      - name: street_address_2
+        description: Standardized street address line 2 (currently NULL)
+
+      - name: city
+        description: Standardized city name
+
+      - name: state
+        description: Standardized state
+
+      - name: zip
+        description: Zip code
+
+      - name: address_sk
+        description: Surrogate key for address, generated from standardized address components
+        tests:
+          - not_null
+
+      - name: charger_ports
+        description: Number of charging ports available
+
+      - name: power_kw_max
+        description: Maximum power output in kilowatts
+
+      - name: power_kw_min
+        description: Minimum power output in kilowatts
