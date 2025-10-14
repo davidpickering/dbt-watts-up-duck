@@ -13,6 +13,7 @@ renamed as (
         {{adapter.quote("city")}}::text as city,
         {{adapter.quote("country_code")}}::text as country_code,
         {{adapter.quote("state_province")}}::text as state,
+        {# upper({{adapter.quote("state_province")}}::text) as state, #} --demonstrate cleanup in staging benefiting marts
         NULL as zip,
         CAST({{adapter.quote("latitude")}} AS DECIMAL(9,6)) as latitude,
         CAST({{adapter.quote("longitude")}} AS DECIMAL(10,7)) as longitude,
