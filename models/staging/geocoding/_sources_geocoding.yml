@@ -1,0 +1,44 @@
+version: 2
+
+sources:
+  - name: geocoding
+    database: raw
+    schema: geocoding
+    tables:
+      - name: ohio_geocoded_addresses
+        description: Reverse geocoded addresses for Ohio charging stations
+        columns:
+          - name: latitude
+            description: Original latitude coordinate
+            tests:
+              - not_null
+          - name: longitude
+            description: Original longitude coordinate
+            tests:
+              - not_null
+          - name: station_id
+            description: Original charging station ID
+            tests:
+              - not_null
+          - name: station_name
+            description: Original charging station name
+          - name: original_city
+            description: Original city from source data
+          - name: original_state
+            description: Original state from source data
+          - name: street_address
+            description: Geocoded street address
+          - name: city
+            description: Geocoded city
+          - name: state
+            description: Geocoded state
+          - name: zip_code
+            description: Geocoded zip code
+          - name: geocoded_at
+            description: Timestamp when geocoding was performed
+            tests:
+              - not_null
+          - name: geocoding_source
+            description: Source of geocoding data (Nominatim, Failed, etc.)
+            tests:
+              - not_null

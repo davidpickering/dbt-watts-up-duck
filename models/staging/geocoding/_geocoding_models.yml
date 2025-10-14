@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: stg_geocoding__ohio_addresses
+    description: Staging model for reverse geocoded Ohio charging station addresses with parsed address components
+    columns:
+      - name: station_id
+        description: Unique identifier for the charging station
+        tests:
+          - not_null
+          - unique
