@@ -1,3 +1,10 @@
+{{
+  config(
+    materialized='table',
+    description='Address dimension with H3 spatial indexing'
+  )
+}}
+
 with
 
 charging_stations as (
@@ -59,7 +66,29 @@ unique_addresses as (
 ),
 
 final as (
-    select * from unique_addresses
+    select 
+        *,
+        -- Convert lat/long to H3 cell at resolution 8
+        case 
+            when latitude_best is not null and longitude_best is not null then
+                h3_latlng_to_cell(latitude_best, longitude_best, 8)
+            else null
+        end as h3_cell_resolution_8,
+        
+        -- Add H3 cell metadata
+        case 
+            when latitude_best is not null and longitude_best is not null then
+                h3_cell_to_parent(h3_latlng_to_cell(latitude_best, longitude_best, 8), 7)
+            else null
+        end as h3_cell_resolution_7,
+        
+        case 
+            when latitude_best is not null and longitude_best is not null then
+                h3_cell_to_parent(h3_latlng_to_cell(latitude_best, longitude_best, 8), 6)
+            else null
+        end as h3_cell_resolution_6
+        
+    from unique_addresses
     )
 
 select * from final
