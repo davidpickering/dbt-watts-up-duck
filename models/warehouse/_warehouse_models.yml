@@ -1,0 +1,7 @@
+version: 2
+
+models:
+  - name: dim_ev_models
+    description: Warehouse model for evs and their capabilities
+  - name: dim_addresses
+    description: Warehouse model for addresses with reverse geocoding enrichment
