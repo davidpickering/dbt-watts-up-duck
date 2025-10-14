@@ -16,6 +16,7 @@ renamed as (
 
 final as (
     select
+        {{dbt_utils.generate_surrogate_key(['make', 'model', 'first_year'])}} as ev_model_sk,
         make,
         model,
         first_year,

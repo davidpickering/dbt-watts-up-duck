@@ -88,4 +88,25 @@ print(result)
 result = show_sample(dbname="raw", schemaname="dcfast", tablename="ev_models_2025")
 print(f"\nSample data: {result}")
 
+# Geocoding
+## Ohio Geocoded Addresses
+### Load CSV directly into a table (if it exists)
+try:
+    con.execute("""
+        CREATE OR REPLACE TABLE raw.geocoding.ohio_geocoded_addresses AS
+        SELECT * FROM 'project_data/ohio_geocoded_addresses.csv'
+    """)
+    
+    ### Verify it loaded
+    result = state_table_row_count(dbname="raw", schemaname="geocoding", tablename="ohio_geocoded_addresses")
+    print(f"\n{result}")
+    
+    ### Show sample
+    result = show_sample(dbname="raw", schemaname="geocoding", tablename="ohio_geocoded_addresses")
+    print(f"\nSample geocoded data: {result}")
+    
+except Exception as e:
+    print(f"\nGeocoded addresses not found: {e}")
+    print("Run 'python duckdb_setup/4-reverse_geocode_ohio.py' to generate geocoded addresses")
+
 con.close()

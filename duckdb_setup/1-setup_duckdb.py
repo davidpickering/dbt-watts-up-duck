@@ -13,9 +13,14 @@ databases = con.execute("SELECT * FROM duckdb_databases()").df()
 print(f"DuckDB Databases")
 print(databases)
 
+# Install and load H3 extension for spatial indexing
+con.execute("INSTALL h3 FROM community")
+con.execute("LOAD h3")
+
 # Create schemas for organizing raw data
 con.execute("CREATE SCHEMA IF NOT EXISTS raw.paren")
 con.execute("CREATE SCHEMA IF NOT EXISTS raw.dcfast")
+con.execute("CREATE SCHEMA IF NOT EXISTS raw.geocoding")
 
 # Show schemas that exist
 schemas = con.execute("SELECT * FROM duckdb_schemas()").df()

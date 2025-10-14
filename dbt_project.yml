@@ -17,3 +17,8 @@ clean-targets:
 models:
   watts_up_duck:
     +materialized: view
+
+# DuckDB configuration
+on-run-start:
+  - "INSTALL h3 FROM community"
+  - "LOAD h3"

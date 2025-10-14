@@ -34,6 +34,7 @@ watts_up_duck:
   - 9.1 run `python duckdb_setup/1-setup_duckdb.py ` - This will setup DuckDB with the proper database and schema names
   - 9.2 run `python duckdb_setup/2-kaggle.py` - This will download the datasets from Kaggle and copy them to the project_data directory
   - 9.3 run `python duckdb_setup/3-load_raw_data.py` - This will load the raw data into the DuckDB database
+  - or - For your convenience, there is a setup.sh script that will run all of the above steps run `./duckdb_setup/setup.sh`
 10. Verify successful setup of DuckDB, and loading of raw data to landing zone by running `dbt build`. You should see similar output to the following:
 ```
 $ dbt build
@@ -62,8 +63,16 @@ $ dbt build
 
 2. Modify the 3-load_raw_data.py script to load the data into DuckDB
 
-3. Add the source to the _sources.yml file
+3. Run `./duckdb_setup/setup.sh` to run the setup scripts
 
-4. Create Staging Model
+4. Add the source to the _sources.yml file
 
-5. Document the model in the appropriate _models.yml file
+5. Create Staging Model
+
+6. Document the model in the appropriate _models.yml file
+
+### Geocoding
+
+There is a reverse geocoding script that will geocode the addresses for the Ohio charging stations. It is at `duckdb_setup/4-reverse_geocode_ohio.py`. It will create a CSV file of the geocoded addresses and load it into the DuckDB database. For your convenience, a backup version of this data is included in the duckdb_setup directory called `ohio_geocoded_addresses.csv`. It will be copied to the project_data directory and loaded into the DuckDB database by the existing 3-load_raw_data.py script.
+
+If you would like to geocode other addresses or more Ohio data please feel free to modify the script to your needs. (It would be great if it accepted some --args to run it for different states.)

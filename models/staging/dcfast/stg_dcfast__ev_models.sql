@@ -1,8 +1,8 @@
 with
 
 source as (
-    select * from {{ source('dcfast', 'ev_models_2025') }}
-    --select * from {{ source('dcfast', 'ev_models_2025') }} where market_regions LIKE '%US%'
+    {# select * from {{ source('dcfast', 'ev_models_2025') }} #}
+     select * from {{ source('dcfast', 'ev_models_2025') }} where market_regions LIKE '%US%'
 ),
 
 renamed as (
@@ -13,7 +13,8 @@ renamed as (
         {{adapter.quote("powertrain")}}::text as powertrain,
         {{adapter.quote("first_year")}}::integer as first_year,
         {{adapter.quote("body_style")}}::text as body_style,
-        {{adapter.quote("origin_country")}}::text as origin_country
+        {{adapter.quote("origin_country")}}::text as origin_country,
+        {{dbt_utils.generate_surrogate_key(['make', 'model', 'first_year'])}} as ev_model_sk
     from source
 
 )
