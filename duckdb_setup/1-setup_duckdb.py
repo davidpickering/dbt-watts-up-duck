@@ -17,6 +17,10 @@ print(databases)
 con.execute("INSTALL h3 FROM community")
 con.execute("LOAD h3")
 
+# Install and load H3 extension for spatial indexing
+con.execute("INSTALL spatial")
+con.execute("LOAD spatial")
+
 # Create schemas for organizing raw data
 con.execute("CREATE SCHEMA IF NOT EXISTS raw.paren")
 con.execute("CREATE SCHEMA IF NOT EXISTS raw.dcfast")

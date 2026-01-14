@@ -1,5 +1,9 @@
 # dbt-watts-up-duck Presentation
 
+## Goal
+
+Made the case that if someone wants to do some geographic optimization there is a widely supported set of strategies they can use within their database - no map needed.
+
 ## Background
 
 ### What are Shapefiles?
@@ -16,7 +20,7 @@
 
 #### OLTP Databases
 - PostGres
-- SQLServer/MsSQL
+- SQLServer
 - MySQL
 - Oracle DB2
 - Hadoop
