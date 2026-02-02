@@ -8,3 +8,4 @@ logs/
 dbt_internal_packages/
 .claude/
 .cursor/mcp.json
+*.html

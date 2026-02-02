@@ -55,6 +55,13 @@ $ dbt build
 16:59:12  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
 ```
 
+## Technology
+
+### DuckDB
+
+[Data Input](https://duckdb.org/docs/stable/clients/python/overview#data-input)
+
+
 ## Project Life Cycle
 
 ### Load New Data
