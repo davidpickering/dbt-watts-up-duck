@@ -37,6 +37,7 @@ Associated metadata in .dbf file:
 - GEOMETRY: POLYGON((-83.10 40.15, -83.05 40.18, -83.02 40.12, -83.06 40.08, -83.09 40.10, -83.10 40.15))
 ```
 
+See: shapefile_demo.ipynb -> quick_example
 
 ### How well supported are Shapefiles?
 
@@ -56,8 +57,6 @@ DuckDB uses the `ST_` prefix for spatial functions (following PostGIS convention
 - ST_Within - ?? Returns True/False if shape 1 is within shape 2. e.g., is a specific zip code in Ohio?
 - st_intersects - ?? Returns True/False if shape 1 intersects shape 2. e.g. does a specific zip code touch other overlap with a specific county?
 - ST_Point - Takes a pair of coordinates and creates a geography point
-- st_??? - Takes a series of coordinates
-- takes a series of shapes
 - ... and more. DuckDB provides over [120 spatial functions](https://duckdb.org/docs/stable/core_extensions/spatial/functions)
 
 Learn more: [DuckDB Spatial Documentation](https://duckdb.org/docs/stable/core_extensions/spatial/overview)
@@ -163,48 +162,34 @@ Many cities operate municipal GIS portals to provide easy access to some of thei
 
 ## Simple SQL Demo with Shapefiles
 
-### Create Table
+shapefile_demo.ipynb -> ## Simple SQL Demo
+- Create Table
+- Show Table
+- Show data on Map
 
-```sql
-
-```
-
-### Query the Shape
-```sql
-
-```
-
-#### Show the Shape on a Map
-
-### From the Shape - Extract Centroid
-```sql
-
-```
+## No Map Required (But Still Helps)
 
 #### What is a Centroid?
-
+### From the Shape - Extract Centroid
 #### Show Shape + Centroid on a Map
 
+shapefile_demo.ipynb -> ### Centroid
+
+
+
 ### From the Shape - Extract Bounding Box
-```sql
-
-```
-
 #### Show Shape + Centroid + Bounding Box on a Map
 
+
+shapefile_demo.ipynb -> ### Bounding Box
+
+
 ### From the Shape - Extract Lat/Long of Centroid
-```sql
+#### Show Shape + Centroid + Lat/Long Lines on a Map
 
-```
 
-#### Show Shape + Centroid + Bounding Box + Lat/Long Lines on a Map
+shapefile_demo.ipynb -> ### Extracting Latitudes and Longitudes
 
-### From the Shape - Extract Min/Max of Lat/Long of Bounding Box
-```sql
-
-```
-
-#### Show Shape + Centroid + Bounding Box + Min/Max Lat/Long Lines on a Map
 
 ## Practical applications
 
@@ -213,7 +198,10 @@ Many cities operate municipal GIS portals to provide easy access to some of thei
 At a surface level, the main purpose of having shapefile data, as opposed to just using tabular data + links is to show the data on maps.
 e.g., Show the states
 
-Want to make the case that yes, showing on maps is in many ways the ultimate goal. However, once you have this data in your data base you can then introduce a lot more logic and inntelligence in how you relate data to each other based on the relationships to the shapes.
+Want to make the case that yes, showing on maps is in many ways the ultimate goal. However, once you have this data in your data base you can then introduce a lot more logic and intelligence in how you relate data to each other based on the relationships to the shapes.
+(Show charging stations or SNAP retailer point data)
+
+What states are these different points in?
 
 ### Aggregate data, show on map, scaled by count
 e.g., Show thematic map with data aggregated by state
