@@ -23,8 +23,6 @@ final as (
         ON ST_Within(ST_Point(addresses.longitude_best, addresses.latitude_best), state_data.geom)
     WHERE addresses.latitude_best IS NOT NULL 
     AND addresses.longitude_best IS NOT NULL
-    LIMIT 500
-
 )
 
 select * from final

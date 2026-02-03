@@ -6,6 +6,12 @@ Make the case that if someone wants to do some geographic optimization there is 
 
 ## Background
 
+This presentation builds upon previous work done to show a dbt project, running against a local DuckDB database. 
+- dbt is a SQL compiling and orchestration tool that makes it easy(easier) to for (most) analysts and developers to contribute to data warehousing efforts.
+- DuckDB is
+- Adds: Geospatial concepts such as shapefiles, polygon geometries, point geometries, within(), intersects() and a few other spatial operations.
+- Adds: Folium - a Python wrapper of the [Leaflet](https://leafletjs.com/) mapping library.
+
 ### What are Shapefiles?
 
 Shapefiles are a popular geospatial vector data format developed by Esri for storing the location, shape, and attributes of geographic features. A shapefile actually consists of multiple files (typically .shp, .shx, .dbf, and .prj) that work together to represent points, lines, or polygons on a map. They are widely used for representing administrative boundaries (like states, counties, zip codes), transportation networks, water bodies, and other geographic features. Despite being an older format, shapefiles remain one of the most universally supported geospatial formats across GIS software and modern databases.
@@ -54,8 +60,8 @@ The spatial extension provides a `GEOMETRY` type for storing geospatial data as 
 
 DuckDB uses the `ST_` prefix for spatial functions (following PostGIS convention) and leverages GEOS and PROJ libraries for spatial calculations. Key functions for working with shapefiles:
 - `st_read('path/to/shapefile.shp')` - Table function to import shapefile data directly into DuckDB
-- ST_Within - ?? Returns True/False if shape 1 is within shape 2. e.g., is a specific zip code in Ohio?
-- st_intersects - ?? Returns True/False if shape 1 intersects shape 2. e.g. does a specific zip code touch other overlap with a specific county?
+- ST_Within - Returns True/False if shape 1 is within shape 2. e.g., is a specific zip code in Ohio?
+- st_intersects - Returns True/False if shape 1 intersects shape 2. e.g. does a specific zip code touch other overlap with a specific county?
 - ST_Point - Takes a pair of coordinates and creates a geography point
 - ... and more. DuckDB provides over [120 spatial functions](https://duckdb.org/docs/stable/core_extensions/spatial/functions)
 
@@ -218,100 +224,6 @@ shapefile_demo.ipynb -> #### Frequency Distribution
 Want to make the case that yes, showing on maps is in many ways the ultimate goal. However, once you have this data in your data base you can then introduce a lot more logic and intelligence in how you relate data to each other based on the relationships to the shapes.
 (Show charging stations or SNAP retailer point data)
 
+## Extra Content
 
-### Distance Calculations
-
-#### Query for Distance
-Given two shapes, how far apart are they?
-- There are a few ways to answer this
-- For two points, it is straightforward, just calculate the distance.
-- For two shapes, we might need some follow up questions. 
-- Are we talking the closest points of their shapes edge to edge?
-- Distance between their centroids?
-
-e.g., how far apart are California and Ohio
-shapefile_demo.ipynb -> ### How far apart are two shapes?
-
-
-#### Filter based on Distance
-
-Which states have their centroid within 1000 miles of Ohio?
-
-#### Filter based on a bounding box
-
-Which Zip Codes have their centroids within Ohio's Bounding Box?
-
-### Spatial Operations - Within and Intersects
-
-Demo: Show the zip codes in a state
-
-#### Method 1: Determined by shapefile metadata
-- Is there a way to see which zip codes are mostly within a state? (Zip3 data/logic?)
-
-#### Method 2: st_within()
-- Within will show you which zip code shapes are completely contained _within_ another shape
-- Show Zip Codes within Ohio
-
-#### Method 3: st_intersects()
-- Intersects will show you which zip code shapes are within, cross into, or touch another shape.
-- Very wide answer; Any zip codes that have anything to do with Ohio.
-
-### Spatial Operations - ??? Other Interesting Methods?
-
-Line - extra, make a line, show method to reveal which geometries it transverses (e.g., Columbus to Cleveland, Radio Stations)
-Combine multiple shapes into a new shape
-Merge boundaries for a new shape
-
-## 
-
-### Limitations of Mapping Applications
-
-If you house shape data in your database, you can build responsive mapping applications on top of them
-(Thinking have 1 map, and then multiple layers we can click on/off)
-- Show the states in the US
-- Show points in the states
-- Tooltip for a point, note the state, cound/tabulate data by state
-
-### Geography Types
-Point Geographies
-Shape geographies
-??? Line - extra, make a line, show method to reveal which geometries it transverses (e.g., Columbus to Cleveland, Radio Stations)
-??? Other
-
-### Spatial Joins
-This is how to get shape file properties applied to other facts
-
-#### Example associating x points with states
-Points now have a state code on them
-
-#### Not just States...
-- Census Tracts, UNSD, CD, (something obscure...?)
-(Show Ohio map with each of these - 3 pictures)
-
-#### Materialize shape properties onto fact table
-- Spatial joins & writing properties from shapes onto facts
-
-```sql
-(Generic example)
-```
-
-### H3 Geospatial Index
-
-#### What is it?
-
-Definition:
-
-##### Large Scale example ~1 index shape per state
-
-##### Small Scale example ~1 index shape for a building
-
-#### Point Data - Convert to H3 Index
-#### Point Data - Convert to H3 Index and Boundary (for shape)
-#### Point Data - Convert to H3 Index + Boundary & Aggregate
-
-(Show on Map)
-
-#### Example - Using a large H3 shape boundary, intersect with zip codes
-Aggregating point data by shapefile properties
-
-Folium demo - interspersed in the talk, but show some of the results at the end.
+Please review the shapefile_demo.ipynb notebook for more content and examples

@@ -23,11 +23,14 @@ SHAPEFILES = [
         "url": "https://www2.census.gov/geo/tiger/TIGER2025/STATE/tl_2025_us_state.zip",
         "extract_dir": "tl_2025_us_state",
     },
-    # Add more shapefiles here, e.g.:
-    # {
-    #     "url": "https://www2.census.gov/geo/tiger/TIGER2025/ZCTA5/tl_2025_us_zcta5.zip",
-    #     "extract_dir": "tl_2025_us_zcta5",
-    # },
+    {
+        "url": "https://www2.census.gov/geo/tiger/TIGER2025/ZCTA520/tl_2025_us_zcta520.zip",
+        "extract_dir": "tl_2025_us_zcta5",
+    },
+    {
+        "url": "https://www2.census.gov/geo/tiger/TIGER2025/COUNTY/tl_2025_us_county.zip",
+        "extract_dir": "tl_2025_us_county",
+    },
 ]
 
 
@@ -63,5 +66,17 @@ if __name__ == "__main__":
 shapefile_path = os.path.join(BASE_DIR, "tl_2025_us_state", "tl_2025_us_state.shp")
 con.execute(f"""
     CREATE OR REPLACE TABLE raw.shapes.states AS
+    SELECT * FROM st_read('{shapefile_path}')
+""")
+
+shapefile_path = os.path.join(BASE_DIR, "tl_2025_us_zcta5", "tl_2025_us_zcta520.shp")
+con.execute(f"""
+    CREATE OR REPLACE TABLE raw.shapes.zcta AS
+    SELECT * FROM st_read('{shapefile_path}')
+""")
+
+shapefile_path = os.path.join(BASE_DIR, "tl_2025_us_county", "tl_2025_us_county.shp")
+con.execute(f"""
+    CREATE OR REPLACE TABLE raw.shapes.counties AS
     SELECT * FROM st_read('{shapefile_path}')
 """)

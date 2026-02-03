@@ -6,3 +6,5 @@ sources:
     schema: shapes
     tables:
         - name: states
+        - name: zcta
+        - name: counties
