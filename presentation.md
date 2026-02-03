@@ -193,30 +193,45 @@ shapefile_demo.ipynb -> ### Extracting Latitudes and Longitudes
 
 ## Practical applications
 
-### Showing things on Maps!
+### Showing Things on Maps - Shapes & Points
 
-At a surface level, the main purpose of having shapefile data, as opposed to just using tabular data + links is to show the data on maps.
-e.g., Show the states
+Fundamentally, geographic data is trying to provide a shortcut to understand relationships between objects. Many times, these objects have hierarchies (e.g., counties are in states, addresses are in zip codes, etc...). 
+- At a surface level, having shapefile data allows you to show that information on a map, and understand basic relationships and distributions that tabular data alone may not reveal.
+- Likewise, mapping data alone likely does not unlock all the value of data with a well curated geography dimension.
+
+shapefile_demo.ipynb -> ### Showing Things on Maps - Shapes & Points
+- This example; show a map with state boundaries and points on them.
+
+### Frequency Distribution
+- Did some of this heavy lifting in our dbt project, [DimGeos](review the models/warehouse/dim_geos.sql) model for the spatial join syntax
+- Result is that we can positively identify, which state each point is within - even if we do not have address data.
+- If we did have address data, there are plenty of times we want to validate data (is this zip code correct?). Coordiantes+spatial joins provide a path for that work.
+shapefile_demo.ipynb -> ### Showing Things on Maps - From Spatial Join
+- Example showing data just in a few states, using information from the spatial join
+- *Data is filtered using its geographic properties alone*
+
+shapefile_demo.ipynb -> #### Frequency Distribution
+- Uses the point data, with spatial join to states, to show how many points are in each state.
+
+
 
 Want to make the case that yes, showing on maps is in many ways the ultimate goal. However, once you have this data in your data base you can then introduce a lot more logic and intelligence in how you relate data to each other based on the relationships to the shapes.
 (Show charging stations or SNAP retailer point data)
 
-What states are these different points in?
-
-### Aggregate data, show on map, scaled by count
-e.g., Show thematic map with data aggregated by state
-
-```sql
-
-```
-
------map-----
 
 ### Distance Calculations
 
 #### Query for Distance
-Given two shapes, determine how far apart they are
+Given two shapes, how far apart are they?
+- There are a few ways to answer this
+- For two points, it is straightforward, just calculate the distance.
+- For two shapes, we might need some follow up questions. 
+- Are we talking the closest points of their shapes edge to edge?
+- Distance between their centroids?
+
 e.g., how far apart are California and Ohio
+shapefile_demo.ipynb -> ### How far apart are two shapes?
+
 
 #### Filter based on Distance
 

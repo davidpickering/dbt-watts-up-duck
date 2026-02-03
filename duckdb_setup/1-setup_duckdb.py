@@ -25,6 +25,7 @@ con.execute("LOAD spatial")
 con.execute("CREATE SCHEMA IF NOT EXISTS raw.paren")
 con.execute("CREATE SCHEMA IF NOT EXISTS raw.dcfast")
 con.execute("CREATE SCHEMA IF NOT EXISTS raw.geocoding")
+con.execute("CREATE SCHEMA IF NOT EXISTS raw.shapes")
 
 # Show schemas that exist
 schemas = con.execute("SELECT * FROM duckdb_schemas()").df()

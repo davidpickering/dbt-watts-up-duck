@@ -1,7 +1,19 @@
 import os
 import zipfile
 import urllib.request
+import duckdb
 
+import folium
+from IPython.display import display
+import json
+
+# Use shared connection with extensions loaded
+from connection import get_connection
+
+con = duckdb.connect('development.duckdb')
+con.execute("ATTACH 'raw.db' AS raw")
+con.execute("INSTALL spatial")
+con.execute("LOAD spatial")
 BASE_DIR = os.path.join(os.path.dirname(__file__), "..", "project_data", "shapes")
 
 # Each entry: URL to the .zip file, and the directory name to extract into.
@@ -46,3 +58,10 @@ if __name__ == "__main__":
         download_and_extract(entry["url"], entry["extract_dir"])
 
     print("\nAll shapefiles ready.")
+
+
+shapefile_path = os.path.join(BASE_DIR, "tl_2025_us_state", "tl_2025_us_state.shp")
+con.execute(f"""
+    CREATE OR REPLACE TABLE raw.shapes.states AS
+    SELECT * FROM st_read('{shapefile_path}')
+""")
