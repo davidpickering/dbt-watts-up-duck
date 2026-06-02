@@ -1,4 +1,4 @@
-# dbt-watts-up-duck Presentation
+# GeoSpatial Analytics
 
 ## Goal
 
