@@ -11,3 +11,12 @@ dbt_internal_packages/
 *.html
 *.pyc
 __pycache__/
+
+project_data/shapes/
+*.shp
+*.zip
+*.dbf
+*.shx
+*.prj
+*.shp.iso.xml
+*.shp.ea.iso.xml
