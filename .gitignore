@@ -8,6 +8,7 @@ logs/
 dbt_internal_packages/
 .claude/
 .cursor/mcp.json
+.vscode/
 *.html
 *.pyc
 __pycache__/
