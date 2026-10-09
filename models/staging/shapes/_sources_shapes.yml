@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: shapes
+    database: raw
+    schema: shapes
+    tables:
+        - name: states
+        - name: zcta
+        - name: counties

@@ -22,3 +22,5 @@ models:
 on-run-start:
   - "INSTALL h3 FROM community"
   - "LOAD h3"
+  - "INSTALL spatial"
+  - "LOAD spatial"
