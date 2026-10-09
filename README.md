@@ -83,3 +83,6 @@ $ dbt build
 There is a reverse geocoding script that will geocode the addresses for the Ohio charging stations. It is at `duckdb_setup/4-reverse_geocode_ohio.py`. It will create a CSV file of the geocoded addresses and load it into the DuckDB database. For your convenience, a backup version of this data is included in the duckdb_setup directory called `ohio_geocoded_addresses.csv`. It will be copied to the project_data directory and loaded into the DuckDB database by the existing 3-load_raw_data.py script.
 
 If you would like to geocode other addresses or more Ohio data please feel free to modify the script to your needs. (It would be great if it accepted some --args to run it for different states.)
+
+### Shapefiles
+
