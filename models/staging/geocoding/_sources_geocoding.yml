@@ -5,6 +5,8 @@ sources:
     database: raw
     schema: geocoding
     tables:
+      - name: cle_open_data_water_meters
+        description: Cleveland Open Data - Address Points. Address points within the Cleveland Water Division service area. Maintained by City of Cleveland Department of Public Utilities GIS staff. Cleveland Water Service may not be available to all of these addresses. Call 216-664-2444 x75209 for specific information.
       - name: ohio_geocoded_addresses
         description: Reverse geocoded addresses for Ohio charging stations
         columns:
