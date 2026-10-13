@@ -140,4 +140,13 @@ except Exception as e:
     print(f"\nYou need to download the data set and save to project_data/")
     print("Run 'python duckdb_setup/3-load_raw_data.py' to integrate this data")
 
+tables = con.execute("""
+    SELECT table_name, estimated_size AS row_count, column_count
+    FROM duckdb_tables()
+    WHERE database_name = 'raw'
+    ORDER BY table_name
+""").df()
+print("\nTables in raw database")
+print(tables)
+
 con.close()

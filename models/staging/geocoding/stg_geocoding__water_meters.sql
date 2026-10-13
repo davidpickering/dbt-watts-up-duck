@@ -65,8 +65,3 @@ final as (
 )
 
 select * from final
-
--- TODO additional work here to parse the reverse geocoded address into components
--- -- It looks like we might have "reverse geocoded" to nearest point of interest rather than an actual address
--- -- e.g., 13999, SR 2, Grodis Corner, Benton Township, Ottawa County, Ohio, 43449, United States
--- -- e.g., Walgreens, East Broad Street, Columbus, Franklin County, Ohio, 43209, United States
