@@ -5,3 +5,9 @@ models:
     description: Warehouse model for evs and their capabilities
   - name: dim_addresses
     description: Warehouse model for addresses with reverse geocoding enrichment
+    columns:
+      - name: address_sk
+        description: Surrogate key constructed from all five address fields. Unique identifier for the record.
+        tests:
+          - not_null
+          - unique

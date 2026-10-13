@@ -15,6 +15,10 @@ charge_points as (
     select * from {{ ref('stg_paren__charge_points') }}
 ),
 
+water_meters as (
+    select * from {{ ref('stg_geocoding__water_meters') }}
+),
+
 
 union_addresses as (
         select
@@ -40,6 +44,18 @@ union_addresses as (
             NULL as longitude
         from
         charge_points
+    union all
+        select
+            street_address_1,
+            street_address_2,
+            city,
+            state,
+            zip,
+            address_sk,
+            NULL as latitude,
+            NULL as longitude
+        from
+        water_meters
 ),
 
 unique_addresses as (

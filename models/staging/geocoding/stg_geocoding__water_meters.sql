@@ -12,12 +12,20 @@ renamed as (
         str_name as address_street_name,
         str_type as address_street_type,
         suf_dir as address_suffix_direction,
-        city,
-        state,
-        zip,
         {# addr_source, #}
         {# cat_name, #}
         address as street_address_1,
+        coalesce(building, unit, '') as street_address_2,
+        city,
+        state,
+        zip,
+        {{ dbt_utils.generate_surrogate_key([
+            'street_address_1',
+            'street_address_2',
+            'city',
+            'state',
+            'zip'
+            ]) }} as address_sk,
 
         {# info #}
         parcelpin as parcel_pin,

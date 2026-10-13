@@ -9,3 +9,11 @@ models:
         tests:
           - not_null
           - unique
+  - name: stg_geocoding__water_meters
+    description: Staging model for Address Points within the Cleveland Water Division service area. Strictly speaking, these aren't exactly water meters. But "Address points within..." is a mouthful.
+    columns:
+      - name: point_id
+        description: Unique identifier for the address point
+        tests:
+          - not_null
+          - unique
