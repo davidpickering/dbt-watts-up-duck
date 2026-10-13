@@ -1,0 +1,45 @@
+version: 2
+
+models:
+  - name: city_main_streets
+    description: The "main street" of each city in the Cleveland Water Division service area, defined as the street with the most address points (water meters).
+    columns:
+      - name: city
+        description: City name. One row per city.
+        tests:
+          - not_null
+          - unique
+      - name: main_street
+        description: Street name and type (e.g. "State Rd") with the most water meters in the city.
+        tests:
+          - not_null
+      - name: water_meters
+        description: Number of water meters (address points) on the main street.
+        tests:
+          - not_null
+  - name: zip_water_meters
+    description: Water meters (address points) aggregated by zip code, with a rough center point for each zip. Address points with a blank zip are excluded.
+    columns:
+      - name: zip
+        description: Five-digit zip code. One row per zip.
+        tests:
+          - not_null
+          - unique
+      - name: water_meters
+        description: Number of water meters (address points) in the zip.
+        tests:
+          - not_null
+      - name: cities
+        description: Number of distinct cities in the zip. Zips often cross city lines.
+      - name: streets
+        description: Number of distinct streets (name and type) in the zip.
+      - name: parcels
+        description: Number of distinct parcels in the zip.
+      - name: primary_city
+        description: The city with the most water meters in the zip.
+      - name: center_latitude
+        description: Average latitude of the zip's water meters, ignoring missing coordinates.
+      - name: center_longitude
+        description: Average longitude of the zip's water meters, ignoring missing coordinates.
+      - name: pct_of_water_meters
+        description: Share of all water meters in the service area that fall in this zip, as a percentage.
