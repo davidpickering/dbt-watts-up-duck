@@ -31,9 +31,12 @@ watts_up_duck:
 ```
 8. Install dbt dependencies using `dbt deps`
 9. Accomplish project-specific setup from the root directory:
-  - 9.1 run `python duckdb_setup/1-setup_duckdb.py ` - This will setup DuckDB with the proper database and schema names
-  - 9.2 run `python duckdb_setup/2-kaggle.py` - This will download the datasets from Kaggle and copy them to the project_data directory
-  - 9.3 run `python duckdb_setup/3-load_raw_data.py` - This will load the raw data into the DuckDB database
+  - 9.1 run `python duckdb_setup/1-setup_duckdb.py ` - This will setup DuckDB with the proper database and schema names.
+  - 9.2 run `python duckdb_setup/2-kaggle.py` - This will download the datasets from Kaggle and copy them to the project_data directory.
+  - 9.3 run `python duckdb_setup/3-cle_open_data.py` - This will download datsasets from the City of Cleveland Open Data Portal.
+  - 9.4 run `` - This will download datasets from Google Sheets
+  - 9.4 run `python duckdb_setup/4-load_raw_data.py` - This will load the raw data into the DuckDB database.
+  - 9.5 run `python duckdb_setup/5-shapes.py` - This will download shapefiles from the CENSUS TIGER Line files site and load into the DuckDB database.
   - or - For your convenience, there is a setup.sh script that will run all of the above steps run `./duckdb_setup/setup.sh`
 10. Verify successful setup of DuckDB, and loading of raw data to landing zone by running `dbt build`. You should see similar output to the following:
 ```
