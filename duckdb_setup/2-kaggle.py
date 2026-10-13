@@ -65,19 +65,19 @@ def copy_csv_files(source_path: str, csv_files: Optional[List[str]] = None,
 
 # Download latest version
 # https://www.kaggle.com/datasets/tarekmasryo/global-ev-charging-stations
-path = kagglehub.dataset_download("tarekmasryo/global-ev-charging-stations")
-print("Path to dataset files:", path)
+# path = kagglehub.dataset_download("tarekmasryo/global-ev-charging-stations")
+# print("Path to dataset files:", path)
 
-# List of CSV files to copy (add/modify as needed)
-csv_files_to_copy = [
-    "charging_stations_2025_ml.csv",
-    "charging_stations_2025_world.csv",
-    "country_summary_2025.csv",
-    "ev_models_2025.csv",
-    "world_summary_2025.csv"
-]
+# # List of CSV files to copy (add/modify as needed)
+# csv_files_to_copy = [
+#     "charging_stations_2025_ml.csv",
+#     "charging_stations_2025_world.csv",
+#     "country_summary_2025.csv",
+#     "ev_models_2025.csv",
+#     "world_summary_2025.csv"
+# ]
 
-copy_csv_files(path, csv_files_to_copy, "project_data/tarekmasryo")
+# copy_csv_files(path, csv_files_to_copy, "project_data/tarekmasryo")
 
 # 2nd dataset
 # https://www.kaggle.com/datasets/anshtanwar/residential-ev-chargingfrom-apartment-buildings
