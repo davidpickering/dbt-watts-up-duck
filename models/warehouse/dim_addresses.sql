@@ -7,10 +7,6 @@
 
 with
 
-charging_stations as (
-    select * from {{ ref('stg_dcfast__charging_stations_usa') }}
-),
-
 charge_points as (
     select * from {{ ref('stg_paren__charge_points') }}
 ),
@@ -21,18 +17,6 @@ water_meters as (
 
 
 union_addresses as (
-        select
-            street_address_1,
-            street_address_2,
-            city,
-            state,
-            zip,
-            address_sk,
-            latitude,
-            longitude
-        from
-        charging_stations
-    union all
         select
             street_address_1,
             street_address_2,
