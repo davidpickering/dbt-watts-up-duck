@@ -1,0 +1,362 @@
+---
+title: "SQL Demo with DuckDB"
+subtitle: "Cleveland water meters and home energy data"
+format:
+  html:
+    toc: true
+    code-overflow: wrap
+    embed-resources: true
+jupyter: python3
+execute:
+  warning: false
+---
+
+A data warehouse that can run on your laptop.
+Python Package
+Installs into a Python Virtual Environment, accessible through `duckdb` command line
+Also available in multiple language through different client APIs. DuckDB stores your data & runs your queries.
+
+
+```{python}
+#| label: setup
+from duckdb_setup.connection import get_readonly_connection
+
+# Read-only, so it doesn't lock the database while dbt runs
+con = get_readonly_connection()
+
+def sql(query):
+    """Run a query and return a pandas DataFrame, which renders as a table."""
+    return con.sql(query).df()
+```
+
+# Basic SQL Syntax
+
+SQL is a common and incredibly powerful language for interacting with data that has been around for decades. 
+This section goes through the basics of SQL syntax to give you a taste of what is possible. At the end of this section, you'll be able to spell sequel.
+
+## SELECT, FROM, and LIMIT
+
+- `SELECT` picks columns `FROM` a table. 
+- `SELECT * FROM ...` is one of the most common and useful queries for basic data exploration.
+- `LIMIT` is how you reduce row counts. Both for exploration, and selection most/least of a dataset.
+
+
+```{python}
+sql("""
+SELECT *
+FROM stg_geocoding__water_meters
+LIMIT 5
+""")
+```
+
+## WHERE
+
+- `WHERE` filters data rows for just those _where_ a condition is met.
+
+```{python}
+sql("""
+SELECT street_address_1, city, zip
+FROM stg_geocoding__water_meters
+WHERE city = 'Lakewood'
+LIMIT 5
+""")
+```
+
+## ORDER BY
+
+- Bring some _ORDER_ to your results
+- Default sorting is ASC, or Ascending. Smallest to biggest, or alphabetical.
+- `DESC` puts the biggest values first.
+
+```{python}
+sql("""
+SELECT logged_at, circuit, power_kw
+FROM fact_circuit_power
+ORDER BY power_kw DESC
+LIMIT 5
+""")
+```
+
+## GROUP BY
+
+- Collapse rows into one per group. Here, one row per city.
+- Possibly one of the most powerful and consquential parts of SQL
+- Here, we take hourly data logs and _group_ them into daily logs with counts and sums of numeric data.
+
+```{python}
+sql("""
+SELECT
+    date_trunc('day', logged_at)::date AS day,
+    COUNT(*) AS data_points,
+    SUM(power_kw) as energy
+FROM fact_circuit_power
+where circuit = 'heat_pump'
+GROUP BY 1
+ORDER BY 1 desc
+LIMIT 10
+""")
+```
+
+# Aggregates
+
+- `COUNT()` and `SUM()` are just two of many aggregate functions.
+- `AVG()`, `MIN()`, `MAX()`, and  is also very use summarize many rows into one number.
+- Honorable mention `COUNT(DISTINCT )` as being incredibly useful
+
+```{python}
+sql("""
+SELECT
+    COUNT(*) AS water_meters,
+    COUNT(DISTINCT city) AS cities,
+    COUNT(DISTINCT zip) AS zip_codes
+FROM stg_geocoding__water_meters
+""")
+```
+
+Readings are hourly, so the sum of the power readings (kW) for a circuit is its energy use in kilowatt hours.
+
+```{python}
+sql("""
+SELECT
+    circuit,
+    ROUND(SUM(power_kw), 1) AS total_kwh,
+    ROUND(AVG(power_kw), 3) AS avg_kw,
+    ROUND(MAX(power_kw), 3) AS peak_kw
+FROM fact_circuit_power
+WHERE circuit NOT IN ('mains_a', 'mains_b')  -- mains are the whole-house totals
+GROUP BY circuit
+ORDER BY total_kwh DESC
+""")
+```
+
+# The WOW stuff
+
+## Profile a whole table in one line
+
+- This is special to DuckDB, but other languages and databases offer similar utilities
+- `SUMMARIZE` gives min, max, distinct count, quartiles and null percentage for every column.
+
+```{python}
+sql("SUMMARIZE fact_circuit_power")
+```
+
+## Energy use by day
+
+- `date_trunc` rounds a timestamp down to the day, week, month and so on.
+- This is very useful for taking timestamp data, and transforming it into larger buckets of time.
+
+```{python}
+sql("""
+SELECT
+    date_trunc('day', logged_at)::date AS day,
+    ROUND(SUM(power_kw), 1) AS kwh
+FROM fact_circuit_power
+WHERE circuit IN ('mains_a', 'mains_b')
+GROUP BY ALL
+ORDER BY day DESC
+LIMIT 10
+""")
+```
+
+`GROUP BY ALL` groups by every column that isn't an aggregate, so you don't have to repeat them.
+
+## The "main street" of every city
+
+- The street with the most water meters in each city.
+- This query casually demonstrates the power of window functions (`OVER (PARTITION BY ...)`)
+- `QUALIFY` filters on a window function directly, so you don't need a subquery.
+- Altogether this query is counting water meters, by their main_street, but only within a single city at a time.
+
+
+```{python}
+sql("""
+SELECT
+    city,
+    concat_ws(' ', address_street_name, address_street_type) AS main_street, -- concatenate, with separator
+    COUNT(*) AS water_meters
+FROM stg_geocoding__water_meters
+WHERE address_street_name IS NOT NULL
+GROUP BY 1, 2
+QUALIFY ROW_NUMBER() OVER (PARTITION BY city ORDER BY water_meters DESC) = 1
+ORDER BY water_meters DESC
+LIMIT 10
+""")
+```
+
+## Top power hour for each circuit
+
+- The same pattern: number the rows within each circuit, highest power first, and keep number 1.
+- For all the hourly summaries in fact_circuit_power
+- Find the one with the largest power_kw reading, by circuit (Partition)
+- Just keep the top record (`ROW_NUMBER() ... = 1`)
+
+```{python}
+sql("""
+SELECT
+    circuit,
+    logged_at,
+    power_kw
+FROM fact_circuit_power
+where circuit NOT IN ('mains_a', 'mains_b', 'mains_c')
+QUALIFY ROW_NUMBER() OVER (
+    PARTITION BY circuit
+    ORDER BY power_kw DESC, logged_at
+) = 1
+ORDER BY power_kw DESC
+""")
+```
+
+## The 100 biggest power hours
+
+- When does the house use the most power? 
+- Add up the two mains for each hour, keep the 100 biggest hours, then count them by hour of day.
+- This query also demonstrates the powerful _Common Table Expression_ capability, `CTE`.
+- A CTE is a way to chain multiple queries in sequence and use the results from one as the start of another.
+- This makes complex or lengthy SQL much easier to debug, and also serves as the basic for breaking queries down into dbt models.
+
+
+```{python}
+sql("""
+WITH 
+
+house_hours AS (
+    SELECT
+        logged_at,
+        SUM(power_kw) AS house_kw
+    FROM fact_circuit_power
+    WHERE circuit IN ('mains_a', 'mains_b')
+    GROUP BY logged_at
+    ORDER BY house_kw DESC
+    LIMIT 100
+)
+
+SELECT
+    strftime(logged_at, '%-I %p') AS hour_of_day,  -- e.g. '8 PM'
+    COUNT(*) AS hours_in_top_100,
+    ROUND(AVG(house_kw), 2) AS avg_house_kw
+FROM house_hours
+GROUP BY ALL
+ORDER BY hours_in_top_100 DESC
+LIMIT 10
+""")
+```
+
+## Distance to something
+
+How far is it from the conference to happy hour?
+
+- **Cleveland Public Library, Louis Stokes Wing:** 525 Superior Ave, Cleveland, OH 44114
+- **Butcher and Brewer:** 2043 E 4th St, Cleveland, OH 44115
+- `ST_Distance_Sphere` returns the straight-line distance in meters between two points. 
+- It expects each point as **latitude, longitude**, the reverse of the usual x, y order. (Why...?)
+- `VALUES` builds a small table right in the query, which is handy for a few hand-entered points.
+
+
+```{python}
+sql("""
+WITH places AS (
+    SELECT * FROM (VALUES
+        ('Cleveland Public Library', ST_Point(41.50143927090923, -81.69081260203144)),
+        ('Butcher and Brewer',       ST_Point(41.49914424787291, -81.69001255477885))
+    ) AS t(name, geom)
+),
+
+trip AS (
+    SELECT
+        library.name AS start_at,
+        bar.name AS end_at,
+        ST_Distance_Sphere(library.geom, bar.geom) AS meters
+    FROM places AS library, places AS bar
+    WHERE library.name = 'Cleveland Public Library'
+      AND bar.name = 'Butcher and Brewer'
+)
+
+SELECT
+    start_at,
+    end_at,
+    ROUND(meters) AS meters,
+    ROUND(meters * 3.28084) AS feet,
+    ROUND(meters / 1609.34, 2) AS miles,
+    ROUND(meters / 1609.34 / 3 * 60, 1) AS walking_minutes  -- at 3 mph, as the crow walks
+FROM trip
+""")
+```
+
+
+## Generating H3 cells in SQL
+
+- H3 divides the world into hexagons. [Learn More](https://h3geo.org/).
+- Resolution 11 hexagons are about 2,000 m², roughly a single building or two.
+
+```{python}
+h3_cells = sql("""
+WITH library AS (
+    SELECT ST_Point(41.50143927090923, -81.69081260203144) AS geom
+),
+
+nearby_water_meters AS (
+    SELECT latitude, longitude
+    FROM stg_geocoding__water_meters, library
+    WHERE latitude <> 0 AND longitude <> 0
+      -- within 1 mile (1,609 meters) of the library
+      AND ST_Distance_Sphere(ST_Point(latitude, longitude), library.geom) <= 1609.34
+)
+
+SELECT
+    h3_latlng_to_cell(latitude, longitude, 11) AS h3_index,
+    COUNT(*) AS water_meters,
+    ST_AsGeoJSON(ST_GeomFromText(h3_cell_to_boundary_wkt(h3_index))) AS h3_geojson
+FROM nearby_water_meters
+GROUP BY h3_index
+ORDER BY water_meters DESC
+""")
+h3_cells[['h3_index', 'water_meters']].head()
+```
+
+### Woops, we made another map
+
+```{python}
+#| label: h3-map
+import json
+
+import branca.colormap as cm
+import folium
+
+colormap = cm.LinearColormap(
+    ['#ffffcc', '#fd8d3c', '#800026'],
+    vmin=h3_cells['water_meters'].min(),
+    vmax=h3_cells['water_meters'].max(),
+).to_step(data=h3_cells['water_meters'], n=6, method='quantiles')
+colormap.caption = 'Water meters per H3 cell (res 11)'
+
+features = [
+    {
+        "type": "Feature",
+        "geometry": json.loads(row['h3_geojson']),
+        "properties": {"water_meters": int(row['water_meters'])},
+    }
+    for _, row in h3_cells.iterrows()
+]
+
+h3_map = folium.Map(location=[41.50143927090923, -81.69081260203144], zoom_start=15)
+folium.GeoJson(
+    {"type": "FeatureCollection", "features": features},
+    style_function=lambda f: {
+        'fillColor': colormap(f['properties']['water_meters']),
+        'color': 'black',
+        'weight': 0.3,
+        'fillOpacity': 0.7,
+    },
+    tooltip=folium.GeoJsonTooltip(fields=['water_meters'], aliases=['Water meters']),
+).add_to(h3_map)
+
+# Mark the library, the center of the 1-mile radius
+folium.Marker(
+    location=[41.50143927090923, -81.69081260203144],
+    tooltip='Cleveland Public Library, Louis Stokes Wing',
+    icon=folium.Icon(color='blue', icon='book'),
+).add_to(h3_map)
+
+colormap.add_to(h3_map)
+h3_map
+```
