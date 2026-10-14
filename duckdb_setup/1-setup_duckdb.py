@@ -21,11 +21,16 @@ con.execute("LOAD h3")
 con.execute("INSTALL spatial")
 con.execute("LOAD spatial")
 
+# Install and load gsheets extension for working with Google Sheets
+con.execute("INSTALL gsheets FROM community")
+con.execute("LOAD gsheets")
+
 # Create schemas for organizing raw data
 con.execute("CREATE SCHEMA IF NOT EXISTS raw.paren")
 con.execute("CREATE SCHEMA IF NOT EXISTS raw.dcfast")
 con.execute("CREATE SCHEMA IF NOT EXISTS raw.geocoding")
 con.execute("CREATE SCHEMA IF NOT EXISTS raw.shapes")
+con.execute("CREATE SCHEMA IF NOT EXISTS raw.smart_home")
 
 # Show schemas that exist
 schemas = con.execute("SELECT * FROM duckdb_schemas()").df()

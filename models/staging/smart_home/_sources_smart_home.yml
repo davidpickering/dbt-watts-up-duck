@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: smart_home
+    database: raw
+    schema: smart_home
+    tables:
+        - name: electricity_usage_1_hour
+          description: Electricity usage data from the smart home, aggregated to 1-hour intervals.

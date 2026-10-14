@@ -1,18 +1,11 @@
-{{
-  config(
-    materialized='table',
-    description='Address dimension with H3 spatial indexing'
-  )
-}}
-
 with
-
-charging_stations as (
-    select * from {{ ref('stg_dcfast__charging_stations_usa') }}
-),
 
 charge_points as (
     select * from {{ ref('stg_paren__charge_points') }}
+),
+
+water_meters as (
+    select * from {{ ref('stg_geocoding__water_meters') }}
 ),
 
 
@@ -24,10 +17,10 @@ union_addresses as (
             state,
             zip,
             address_sk,
-            latitude,
-            longitude
+            NULL as latitude,
+            NULL as longitude
         from
-        charging_stations
+        charge_points
     union all
         select
             street_address_1,
@@ -39,7 +32,7 @@ union_addresses as (
             NULL as latitude,
             NULL as longitude
         from
-        charge_points
+        water_meters
 ),
 
 unique_addresses as (

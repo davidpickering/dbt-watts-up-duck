@@ -17,6 +17,10 @@ clean-targets:
 models:
   watts_up_duck:
     +materialized: view
+    warehouse:
+      +materialized: table
+    marts:
+      +materialized: table
 
 # DuckDB configuration
 on-run-start:
