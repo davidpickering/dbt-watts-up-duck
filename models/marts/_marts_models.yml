@@ -51,7 +51,7 @@ models:
         tests:
           - not_null
           - unique
-      - name: total_energy_kwh
+      - name: total_energy
         description: Total energy usage across all circuits, in kilowatt hours. Remember, energy is power over time.
         tests:
           - not_null

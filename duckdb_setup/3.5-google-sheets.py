@@ -1,9 +1,14 @@
 import os
 import duckdb
 
+# Subset of data for faster loading during demos.
+# SHEET_IDS = ['1RYTIK0abgmycMxwuAdp8VnYqIlEdmEsuLQ30-V1zz6U', '1RrVGQOgy3Rku5Zr7R1CrdE9vM0CYT3fqtpNbuMokWFQ']
+# SHEET_NAMES = ['electricity_usage_1_hour', 'electricity_usage_1_min']
 
+# Skipping Airthings data for now because it has a lot of rows and DuckDB's Google Sheets reader is slow.
 SHEET_IDS = ['1RYTIK0abgmycMxwuAdp8VnYqIlEdmEsuLQ30-V1zz6U', '1RrVGQOgy3Rku5Zr7R1CrdE9vM0CYT3fqtpNbuMokWFQ', '1b3--R8uf3evma-i33ESBKpHpuz3Q8vykek--iFVADJs', '1KrhcBgcIgQ7JahnWXSYTSV1q8GGAX5VMCRdLSBRnld8']
 SHEET_NAMES = ['electricity_usage_1_hour', 'electricity_usage_1_min', 'airthings_dining_room_20251001_20260930', 'airthings-basement-20251001-20260930']
+
 
 con = duckdb.connect('development.duckdb')
 con.execute("ATTACH 'raw.db' AS raw")

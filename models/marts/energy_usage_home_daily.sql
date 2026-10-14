@@ -14,13 +14,14 @@ agg_daily as (
         sum(case when circuit = 'fridges' then power_kw else 0 end) as fridges
 
     from power
+    where circuit NOT IN ('mains_a', 'mains_b', 'mains_c')
     group by 1
 ),
 
 final as (
     select
         logged_date,
-        round(total_energy_kwh, 3) as total_energy_kwh,
+        round(total_energy_kwh, 3) as total_energy,
         round(garage_shop_panels, 3) as garage_shop_panels,
         round(heat_pump, 3) as heat_pump,
         round(air_handler, 3) as air_handler,
