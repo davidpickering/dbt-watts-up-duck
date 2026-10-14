@@ -17,3 +17,11 @@ models:
         tests:
           - not_null
           - unique
+  - name: fact_circuit_power
+    description: Warehouse model for unique coordinates derived from dim_addresses.
+    columns:
+      - name: time_circuit_sk
+        description: Surrogate key constructed from time and circuit. Unique identifier for the record. Should not have more than once reading per circuit at the same time.
+        tests:
+          - not_null
+          - unique

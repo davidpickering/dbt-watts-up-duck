@@ -1,7 +1,9 @@
 import os
 import duckdb
 
-SHEET_ID = '1CDTeJ-IHirS_mgyw8zVc03yKwyirYfoifcHQXKaTrs0'
+
+SHEET_IDS = ['1RYTIK0abgmycMxwuAdp8VnYqIlEdmEsuLQ30-V1zz6U', '1RrVGQOgy3Rku5Zr7R1CrdE9vM0CYT3fqtpNbuMokWFQ', '1b3--R8uf3evma-i33ESBKpHpuz3Q8vykek--iFVADJs', '1KrhcBgcIgQ7JahnWXSYTSV1q8GGAX5VMCRdLSBRnld8']
+SHEET_NAMES = ['electricity_usage_1_hour', 'electricity_usage_1_min', 'airthings_dining_room_20251001_20260930', 'airthings-basement-20251001-20260930']
 
 con = duckdb.connect('development.duckdb')
 con.execute("ATTACH 'raw.db' AS raw")
@@ -26,13 +28,16 @@ def authenticate():
     #     TYPE gsheet, PROVIDER key_file, FILEPATH '{os.environ["GSHEET_KEY_FILE"]}')""")
 
 
-def load_sheet():
+def load_sheet(sheet_id, sheet_name):
+    # Hyphens are a SQL syntax error in table names (unless quoted), so swap them for underscores
+    table_name = sheet_name.replace('-', '_')
     # Access the data in Google Sheets and import it into DuckDB.
+    print(f"Loading sheet {sheet_name} from Google Sheets ID {sheet_id} into raw.smart_home.{table_name}")
     con.execute(f"""
-        CREATE OR REPLACE TABLE raw.smart_home.electricity_usage_1_min AS
-        select * from read_gsheet('{SHEET_ID}')
+        CREATE OR REPLACE TABLE raw.smart_home.{table_name} AS
+        select * from read_gsheet('{sheet_id}')
     """)
-
+    print(f"Loaded {con.execute(f'SELECT count(*) FROM raw.smart_home.{table_name}').fetchone()[0]} rows into raw.smart_home.{table_name}")
 
 # Only sign in if there's no saved token yet
 has_secret = con.execute(
@@ -41,13 +46,21 @@ has_secret = con.execute(
 if not has_secret:
     authenticate()
 
-try:
-    load_sheet()
-except duckdb.Error as e:
-    # Most likely the saved token expired. Sign in again and retry once.
-    print(f"Google Sheets read failed, re-authenticating: {e}")
-    authenticate()
-    load_sheet()
+reauthenticated = False
+for sheet_id, sheet_name in zip(SHEET_IDS, SHEET_NAMES):
+    try:
+        load_sheet(sheet_id, sheet_name)
+    except duckdb.ParserException:
+        # A SQL mistake, not a login problem. Signing in again won't help.
+        raise
+    except duckdb.Error as e:
+        if reauthenticated:
+            raise
+        # Most likely the saved token expired. Sign in again and retry this sheet once.
+        print(f"Google Sheets read failed, re-authenticating: {e}")
+        authenticate()
+        reauthenticated = True
+        load_sheet(sheet_id, sheet_name)
 
 # duckdb_tables() lists every table DuckDB knows about, including its row count
 tables = con.execute("""

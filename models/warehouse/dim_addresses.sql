@@ -1,10 +1,3 @@
-{{
-  config(
-    materialized='table',
-    description='Address dimension with H3 spatial indexing'
-  )
-}}
-
 with
 
 charge_points as (

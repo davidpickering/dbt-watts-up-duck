@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: stg_smart_home__electricity
+    description: Staging model for smart home electricity usage data with surrogate keys
+    columns:
+      - name: reading_at_local
+        description: Timestamp of the electricity reading in local time.
+        tests:
+          - unique
+          - not_null

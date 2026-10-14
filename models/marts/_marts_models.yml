@@ -43,3 +43,24 @@ models:
         description: Average longitude of the zip's water meters, ignoring missing coordinates.
       - name: pct_of_water_meters
         description: Share of all water meters in the service area that fall in this zip, as a percentage.
+  - name: energy_usage_home_daily
+    description: Daily energy usage for the home, aggregated from 1-minute readings.
+    columns:
+      - name: logged_date
+        description: Date of the reading, in the local timezone. One row per date.
+        tests:
+          - not_null
+          - unique
+      - name: total_energy_kwh
+        description: Total energy usage across all circuits, in kilowatt hours. Remember, energy is power over time.
+        tests:
+          - not_null
+      - name: garage_shop_panels
+        description: Power usage for the garage and shop panels circuit, in kilowatt hours.
+      - name: heat_pump
+        description: Power usage for the heat pump circuit, in kilowatt hours.
+      - name: air_handler
+        description: Power usage for the air handler circuit, in kilowatt hours.
+      - name: fridges
+        description: Power usage for the fridges circuit, in kilowatt hours.
+      
