@@ -9,10 +9,13 @@ Project demonstrating dbt and DuckDB
 ### Repo Setup
 
 1. Clone to repo to your local machine
+  - Recommend using the [GitHub CLI](https://cli.github.com/) to facilitate authenticating to Github `gh auth login` (once installed)
 2. Create a virtual environment called .venv
-3. Install the dependencies `python -m pip install -r requirements.txt`
-4. Activate the virtual environment `source .venv/bin/activate` -or- `source .venv/Scripts/activate`
-5. Verify dbt is installed and available`dbt --version`
+  - From project root, check python is installed `python --version`
+  - Run `python -m venv .venv`
+3. Activate the virtual environment `source .venv/bin/activate` -or- `source .venv/Scripts/activate`
+4. Install the dependencies `python -m pip install -r requirements.txt`
+5. Verify dbt is installed and available `dbt --version`
 6. Setup dbt profiles using `dbt init`
   - Which database would you like to use? `[1] duckdb`
   - Verify dbt setup is complete by running `dbt debug`
