@@ -8,6 +8,8 @@ Project demonstrating dbt and DuckDB
 
 ### Repo Setup
 
+Note: This project was built with Python 3.13.14
+
 1. Clone to repo to your local machine
   - Recommend using the [GitHub CLI](https://cli.github.com/) to facilitate authenticating to Github `gh auth login` (once installed)
 2. Create a virtual environment called .venv
@@ -37,7 +39,7 @@ watts_up_duck:
   - 9.1 run `python duckdb_setup/1-setup_duckdb.py ` - This will setup DuckDB with the proper database and schema names.
   - 9.2 run `python duckdb_setup/2-kaggle.py` - This will download the datasets from Kaggle and copy them to the project_data directory.
   - 9.3 run `python duckdb_setup/3-cle_open_data.py` - This will download datsasets from the City of Cleveland Open Data Portal.
-  - 9.4 run `` - This will download datasets from Google Sheets
+  - 9.4 run `python duckdb_setup/3.5-google-sheets` - This will download datasets from Google Sheets
   - 9.4 run `python duckdb_setup/4-load_raw_data.py` - This will load the raw data into the DuckDB database.
   - 9.5 run `python duckdb_setup/5-shapes.py` - This will download shapefiles from the CENSUS TIGER Line files site and load into the DuckDB database.
   - or - For your convenience, there is a setup.sh script that will run all of the above steps run `./duckdb_setup/setup.sh`
@@ -60,6 +62,11 @@ $ dbt build
 16:59:12
 16:59:12  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
 ```
+
+## Demonstrations
+- `python duckdb_setup/0-duckdb_simple_example.py` - Runs a basic sample of DuckDB Capabilities.
+- `quarto render sql_demo.qmd` - Runs a basic SQL demo using data from the project.
+- `python h3_water_meters_map.py` - Runs a basic map generations script for H3 cells in the City of Cleveland.
 
 ## Technology
 
